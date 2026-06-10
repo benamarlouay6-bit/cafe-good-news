@@ -1,0 +1,312 @@
+# GOOD NEWS SFAX – Prompt Figma AI
+
+Crée une maquette Figma complète d'un site web premium pour le café **GOOD NEWS SFAX**, situé à Sfax, Tunisie.
+
+## Vision du projet
+
+Le site doit refléter exactement l'univers visuel de GOOD NEWS SFAX observé sur Instagram : une identité moderne, chaleureuse, élégante et très "Instagrammable".
+
+Le design doit transmettre une sensation de bonne humeur, de convivialité et de raffinement.
+
+L'objectif est que les visiteurs aient envie de venir prendre des photos, découvrir les boissons et partager leur expérience.
+
+---
+
+# Identité visuelle
+
+S'inspirer directement de l'esthétique des publications Instagram du café :
+
+* Couleur principale : Vert sauge foncé (#5C6F67)
+* Couleur secondaire : Vert sauge clair (#7B8F87)
+* Fond principal : Beige crème (#F7F4EC)
+* Blanc cassé (#FAF8F2)
+* Touches de vert pastel
+* Utiliser le motif "smiley" discret en arrière-plan.
+* Style organique avec formes arrondies.
+* Illustrations minimalistes inspirées du packaging GOOD NEWS.
+* Ambiance premium mais jeune.
+
+Le design doit mélanger :
+
+* Café moderne haut de gamme,
+* esthétique Pinterest,
+* identité Instagram,
+* lifestyle chic.
+
+---
+
+# Typographie
+
+Titres :
+
+* Police élégante et chaleureuse.
+* Style similaire à Playfair Display ou Cormorant.
+
+Texte :
+
+* Police moderne et lisible.
+* Style similaire à Poppins ou Inter.
+
+Hiérarchie forte des titres.
+
+---
+
+# Style général
+
+Créer une expérience immersive.
+
+Le site doit sembler vivant et premium grâce à :
+
+* animations douces,
+* effets hover élégants,
+* transitions fluides,
+* cartes avec ombres légères,
+* grandes photos pleine largeur,
+* sections aérées.
+
+Le design doit être responsive.
+
+Prévoir Desktop, Tablette et Mobile.
+
+---
+
+# Structure du site
+
+## 1. HERO SECTION
+
+Grand écran immersif.
+
+Fond :
+
+* photo du café ou des boissons GOOD NEWS.
+
+Ajouter un arc organique rappelant le post "Save the Date".
+
+Logo centré.
+
+Texte :
+
+"Bienvenue chez GOOD NEWS"
+
+Sous-titre :
+
+"Là où chaque tasse apporte sa dose de bonheur."
+
+Boutons :
+
+* Découvrir la carte
+* Réserver une table
+
+Afficher :
+
+📍 Route Bouzayyen, Sfax
+📞 +216 26 444 800
+🕛 Ouvert jusqu'à minuit
+
+---
+
+## 2. NOTRE UNIVERS
+
+Section storytelling.
+
+Titre :
+
+"Plus qu'un café, une expérience."
+
+Texte :
+
+GOOD NEWS SFAX est un lieu pensé pour partager de beaux moments autour de boissons soigneusement préparées, de desserts gourmands et d'une ambiance chaleureuse.
+
+Ajouter :
+
+* photos lifestyle,
+* personnes souriantes,
+* packaging,
+* décoration.
+
+Disposition asymétrique moderne.
+
+---
+
+## 3. NOS INCONTOURNABLES
+
+Présentation des produits phares.
+
+Créer des cartes premium.
+
+Produits :
+
+• Iced Coffee GOOD NEWS
+• Tiramisu Mangue
+• Frappés Signature
+• Jus Frais
+• Desserts Maison
+
+Chaque carte comprend :
+
+* photo,
+* nom,
+* courte description,
+* prix modifiable,
+* bouton "Commander".
+
+---
+
+## 4. GALERIE INSTAGRAM
+
+Titre :
+
+"Le café le plus photogénique de Sfax"
+
+Créer une galerie inspirée du feed Instagram.
+
+Utiliser une grille dynamique.
+
+Effets :
+
+* zoom au hover,
+* coins arrondis,
+* ouverture en lightbox.
+
+Intégrer :
+
+* boissons,
+* packaging,
+* clients,
+* intérieur,
+* façade.
+
+Ajouter un bouton :
+
+"Suivez-nous sur Instagram"
+
+---
+
+## 5. AVIS CLIENTS
+
+Créer une section élégante.
+
+Fond beige.
+
+Cartes flottantes.
+
+Afficher :
+
+★★★★★
+"Le cadre est magnifique, le personnel est chaleureux et le packaging est très beau."
+— Zeineb Ayadi
+
+★★★★★
+"Service rapide, accueil chaleureux, bravo !"
+— Fatma Ben Salah
+
+★★★★★
+"Excellente expérience, cuisine et service irréprochables."
+— Eya Bouaziz
+
+Ajouter des avatars minimalistes.
+
+---
+
+## 6. RÉSERVATION
+
+Créer une section premium.
+
+Titre :
+
+"Réservez votre moment GOOD NEWS"
+
+Formulaire :
+
+* Nom
+* Téléphone
+* Email
+* Nombre de personnes
+* Date
+* Heure
+* Message
+
+Bouton :
+
+"Réserver"
+
+Ajouter une illustration de tasse de café.
+
+---
+
+## 7. CONTACT
+
+Afficher :
+
+📍 QPCV+34R, Route Bouzayyen, Sfax
+
+📞 +216 26 444 800
+
+🕛 Ouvert jusqu'à 00:00
+
+Carte Google Maps stylisée.
+
+Boutons sociaux :
+
+Instagram
+Facebook
+TikTok
+
+Bouton WhatsApp flottant.
+
+---
+
+## 8. FOOTER
+
+Fond vert sauge.
+
+Logo GOOD NEWS.
+
+Texte :
+
+"Chaque visite mérite sa bonne nouvelle."
+
+Liens :
+
+Accueil
+Carte
+Galerie
+Réservation
+Contact
+
+Icônes sociales.
+
+Mention :
+
+© GOOD NEWS SFAX – Tous droits réservés.
+
+---
+
+# Micro-interactions
+
+Ajouter :
+
+* Hover subtil sur les boutons.
+* Animations de fade.
+* Apparition progressive des sections.
+* Effets parallaxe légers.
+* Animation du motif smiley.
+* Scroll fluide.
+
+---
+
+# Contraintes Figma
+
+Créer :
+
+* Design System complet.
+* Variables de couleurs.
+* Styles typographiques.
+* Composants réutilisables.
+* Auto Layout sur toutes les sections.
+* Variants pour boutons et cartes.
+* Version Desktop (1440 px).
+* Version Tablette.
+* Version Mobile.
+
+Le résultat final doit donner l'impression d'un café premium digne des plus beaux cafés Instagram, tout en restant fidèle à l'identité chaleureuse et moderne de GOOD NEWS SFAX.
