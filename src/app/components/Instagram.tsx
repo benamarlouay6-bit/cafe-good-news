@@ -1,14 +1,16 @@
 import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 import { Instagram } from "lucide-react";
-import img1 from "../../assets/IMG_6973.JPG.jpeg";
-import img2 from "../../assets/IMG_6985.JPG.jpeg";
-import img3 from "../../assets/IMG_7030.JPG.jpeg";
-import img4 from "../../assets/IMG_7031.JPG.jpeg";
-import img5 from "../../assets/IMG_7032.JPG.jpeg";
-import img6 from "../../assets/IMG_7069.JPG.jpeg";
-import img7 from "../../assets/IMG_7123.JPG.jpeg";
-import img8 from "../../assets/IMG_7681.JPG.jpeg";
+import img1 from "../../assets/1.jpeg";
+import img2 from "../../assets/2.jpeg";
+import img3 from "../../assets/3.jpeg";
+import img4 from "../../assets/4.jpeg";
+import img5 from "../../assets/5.jpeg";
+import img6 from "../../assets/6.jpeg";
+import img7 from "../../assets/7.jpeg";
+import img8 from "../../assets/8.jpeg";
+import img9 from "../../assets/9.jpeg";
+
 
 const posts = [
   { url: img1, alt: "img1" },
@@ -19,6 +21,8 @@ const posts = [
   { url: img6, alt: "img6" },
   { url: img7, alt: "img7" },
   { url: img8, alt: "img8" },
+  { url: img9, alt: "img9" },
+
 ];
 
 function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
