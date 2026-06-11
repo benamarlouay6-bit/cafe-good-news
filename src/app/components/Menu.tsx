@@ -220,7 +220,7 @@ function MenuCard({ item, color, textColor }: { item: MenuItem; color: string; t
         <img
           src={item.image}
           alt={item.name}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
         />
         {item.tag && (
           <span
