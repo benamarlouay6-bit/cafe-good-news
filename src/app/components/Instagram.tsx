@@ -1,14 +1,14 @@
 import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 import { Instagram } from "lucide-react";
-import img1 from "../assets/images/IMG_6973.JPG";
-import img2 from "../assets/images/IMG_6985.JPG";
-import img3 from "../assets/images/IMG_7030.JPG";
-import img4 from "../assets/images/IMG_7031.JPG";
-import img5 from "../assets/images/IMG_7032.JPG";
-import img6 from "../assets/images/IMG_7069.JPG";
-import img7 from "../assets/images/IMG_7123.JPG";
-import img8 from "../assets/images/IMG_7681.JPG";
+import img1 from "../assets/IMG_6973.JPG";
+import img2 from "../assets/IMG_6985.JPG";
+import img3 from "../assets/IMG_7030.JPG";
+import img4 from "../assets/IMG_7031.JPG";
+import img5 from "../assets/IMG_7032.JPG";
+import img6 from "../assets/IMG_7069.JPG";
+import img7 from "../assets/IMG_7123.JPG";
+import img8 from "../assets/IMG_7681.JPG";
 
 const posts = [
   { url: img1, alt: "img1" },
