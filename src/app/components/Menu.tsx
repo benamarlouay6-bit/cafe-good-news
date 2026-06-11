@@ -58,6 +58,11 @@ type PowerDrinkItem = {
   prices: { size: string; price: string }[];
 };
 
+type CapacityInfo = {
+  size: string;
+  price?: string;
+};
+
 const menuData = {
   bubbletea: [
       { name: "Passion & Ananas", description: "Perles de fruits, sirop passion, the.", price: "14–16 DT", image: passionAnanas, tag: "Perles de Fruits" },
@@ -713,6 +718,72 @@ function PowerDrinksMenuSection({ color, textColor }: { color: string; textColor
   );
 }
 
+function CapacityHeader({
+  title,
+  capacities,
+  color,
+  textColor,
+}: {
+  title: string;
+  capacities: CapacityInfo[];
+  color: string;
+  textColor: string;
+}) {
+  return (
+    <motion.div
+      key={title}
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -10 }}
+      transition={{ duration: 0.35 }}
+      className="mb-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
+    >
+      <div
+        className="rounded-full px-6 py-3 text-center"
+        style={{
+          background: color,
+          color: textColor,
+          fontFamily: "'Nunito', sans-serif",
+          fontSize: "clamp(1.05rem, 4vw, 1.65rem)",
+          fontWeight: 900,
+          letterSpacing: 1,
+        }}
+      >
+        {title}
+      </div>
+      <div className="flex flex-wrap items-center justify-center gap-3">
+        {capacities.map((capacity) => (
+          <div
+            key={`${capacity.size}-${capacity.price ?? "size"}`}
+            className="flex items-center gap-2 rounded-full px-4 py-2"
+            style={{
+              background: "#fffaf2",
+              border: `2px solid ${color}`,
+              color: "#2C2C2C",
+              fontFamily: "'Nunito', sans-serif",
+              fontWeight: 900,
+              boxShadow: "0 2px 12px rgba(44,44,44,0.05)",
+            }}
+          >
+            <span aria-hidden="true" style={{ fontSize: 24 }}>
+              🥤
+            </span>
+            <span style={{ fontSize: 12, lineHeight: 1.1 }}>{capacity.size}</span>
+            {capacity.price && (
+              <span
+                className="rounded-full px-2 py-1"
+                style={{ background: color, color: textColor, fontSize: 14, lineHeight: 1 }}
+              >
+                {capacity.price}
+              </span>
+            )}
+          </div>
+        ))}
+      </div>
+    </motion.div>
+  );
+}
+
 function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
@@ -861,6 +932,28 @@ export function Menu() {
             </div>
           </FadeIn>
         )}
+
+        <AnimatePresence mode="wait">
+          {active === "bubbletea" && activeBubbleTeaTag === "Perles de Fruits" && (
+            <CapacityHeader
+              title="PERLES DE FRUITS"
+              capacities={[
+                { size: "330 ml", price: "14 DT" },
+                { size: "400 ml", price: "16 DT" },
+              ]}
+              color={current.color}
+              textColor={current.textColor}
+            />
+          )}
+          {active === "matcha" && (
+            <CapacityHeader
+              title="MATCHA"
+              capacities={[{ size: "400 ml" }]}
+              color={current.color}
+              textColor={current.textColor}
+            />
+          )}
+        </AnimatePresence>
 
         {/* Items grid */}
         <AnimatePresence mode="wait">
