@@ -14,10 +14,6 @@ import smoothieBottles from "@/assets/smoothies/smoothie-bottles.png";
 import icedSmoothie from "@/assets/smoothies/iced-smoothie.jpeg";
 import detoxBottles from "@/assets/jus-detox/detox-bottles.png";
 import detoxTable from "@/assets/jus-detox/detox-table.jpeg";
-import cafeIcedLatte from "@/assets/cafes/iced-latte.jpeg";
-import cafeTable from "@/assets/cafes/cafe-table.jpeg";
-import cafeGourmand from "@/assets/cafes/cafe-gourmand.jpeg";
-import pauseCookie from "@/assets/cafes/pause-cookie.jpeg";
 import iceTeaPeche from "@/assets/thes-glaces/ice-tea-peche.png";
 import iceTeaFruitsRouges from "@/assets/thes-glaces/ice-tea-fruits-rouges.png";
 import iceTeaMangue from "@/assets/thes-glaces/ice-tea-mangue.png";
@@ -51,6 +47,12 @@ type MenuCategory = {
   note?: string;
 };
 
+type CafeMenuSection = {
+  title: string;
+  items: { name: string; price: string }[];
+  subtitle?: string;
+};
+
 const menuData = {
   bubbletea: [
       { name: "Passion & Ananas", description: "Perles de fruits, sirop passion, the.", price: "14–16 DT", image: passionAnanas, tag: "Perles de Fruits" },
@@ -80,25 +82,7 @@ const menuData = {
       { name: "GOOD Juice Miles", description: "Kiwi · Ananas · Avocat · Citron", price: "10–16 DT", image: detoxBottles, tag: "Détox" },
       { name: "GOOD Tonic", description: "Gingembre · Ananas · Carotte · Pomme · Curcuma", price: "10–16 DT", image: detoxTable, tag: "Détox" },
   ],
-  cafes: [
-      { name: "Expresso", price: "4 DT", image: cafeIcedLatte, tag: "Classique" },
-      { name: "Américain", price: "4 DT", image: cafeTable, tag: "Classique" },
-      { name: "Cappuccino", price: "5 DT", image: cafeIcedLatte, tag: "Classique" },
-      { name: "Grand Crème", price: "5 DT", image: cafeTable, tag: "Classique" },
-      { name: "Capsule Nespresso", price: "5 DT", image: cafeIcedLatte, tag: "Classique" },
-      { name: "The Kyufi", price: "5 DT", image: cafeTable, tag: "Classique" },
-      { name: "The Infusion", price: "5 DT", image: cafeIcedLatte, tag: "Classique" },
-      { name: "The Jasmin", price: "5 DT", image: cafeTable, tag: "Classique" },
-      { name: "Latte Caramel", description: "Espresso, lait vapeur, caramel.", price: "12 DT", image: cafeIcedLatte, tag: "Spécial" },
-      { name: "Latte Noisette", description: "Espresso, lait, sirop noisette.", price: "12 DT", image: cafeTable, tag: "Spécial" },
-      { name: "Latte Pistache", description: "Espresso, lait, pâte pistache.", price: "13 DT", image: cafeIcedLatte, tag: "Spécial" },
-      { name: "Latte Vanille", description: "Espresso, lait vapeur, vanille.", price: "11 DT", image: cafeTable, tag: "Spécial" },
-      { name: "Spanish Latte", description: "Espresso, lait concentré sucré.", price: "11 DT", image: cafeIcedLatte, tag: "Spécial" },
-      { name: "Latte Chocolat", description: "Espresso, lait, chocolat fondant.", price: "11 DT", image: cafeTable, tag: "Spécial" },
-      { name: "Café Gourmand", description: "Café + mini desserts maison.", price: "12 DT", image: cafeGourmand, tag: "Pause" },
-      { name: "Thé Gourmand", description: "Thé + mini desserts maison.", price: "12 DT", image: pauseCookie, tag: "Pause" },
-      { name: "San Sebastian", description: "Cheesecake basque + boisson au choix.", price: "14 DT", image: cafeGourmand, tag: "Pause" },
-  ],
+  cafes: [],
   thesGlaces: [
       { name: "Ice Tea Pêche", description: "Thé glacé aromatisé à la pêche.", price: "Sur demande", image: iceTeaPeche },
       { name: "Ice Tea Fruits Rouges", description: "Thé glacé aux fruits rouges.", price: "Sur demande", image: iceTeaFruitsRouges },
@@ -153,6 +137,52 @@ const menuData = {
 type MenuCategoryKey = keyof typeof menuData;
 
 const bubbleTeaTags = Array.from(new Set(menuData.bubbletea.map((item) => item.tag).filter(Boolean))) as string[];
+
+const cafeMenuSections: CafeMenuSection[] = [
+  {
+    title: "CAFÉS CLASSIQUES",
+    items: [
+      { name: "EXPRESSO", price: "4 DT" },
+      { name: "AMERICAIN", price: "5 DT" },
+      { name: "CAPPUCIN", price: "4 DT" },
+      { name: "GRAND CRÈME", price: "5 DT" },
+      { name: "CAPSULE NESPRESSO", price: "6 DT" },
+      { name: "THÉ KYUFI", price: "5 DT" },
+      { name: "THÉ INFUSION", price: "5 DT" },
+      { name: "THÉ JASMIN", price: "6 DT" },
+      { name: "SUPPLÉMENT AMANDE", price: "6 DT" },
+      { name: "SUPPLÉMENT FRUITS SECS", price: "8 DT" },
+      { name: "EAU PLATE 1 L", price: "3 DT" },
+      { name: "EAU PLATE 0.5 L", price: "1.5 DT" },
+      { name: "EAU GAZEUSE 1 L", price: "3 DT" },
+    ],
+  },
+  {
+    title: "PAUSE GOURMANDE",
+    items: [
+      { name: "CAFÉ GOURMAND", price: "12 DT" },
+      { name: "THÉ GOURMAND", price: "12 DT" },
+      { name: "SAN SEBASTIAN", price: "14 DT" },
+    ],
+    subtitle: "SAUCE PISTACHE OU SAUCE NUTELLA",
+  },
+  {
+    title: "CAFÉS SPÉCIAUX",
+    items: [
+      { name: "LATTE CARAMEL", price: "12 DT" },
+      { name: "LATTE NOISETTE", price: "12 DT" },
+      { name: "LATTE PISTACHE", price: "14 DT" },
+      { name: "LATTE VANILLE", price: "11 DT" },
+      { name: "LATTE CHOCOLAT", price: "11 DT" },
+      { name: "SPANISH LATTE", price: "11 DT" },
+      { name: "CAPPUCCINO", price: "6 DT" },
+      { name: "NESCAFÉ", price: "4 DT" },
+    ],
+    subtitle: "CAFÉS GLACÉ OU CHAUD",
+  },
+];
+
+const cafeMenuItemCount = cafeMenuSections.reduce((count, section) => count + section.items.length, 0);
 
 const categories: MenuCategory[] = [
   {
@@ -315,6 +345,85 @@ function MenuCard({ item, color, textColor }: { item: MenuItem; color: string; t
   );
 }
 
+function CafeMenuSections({ color, textColor }: { color: string; textColor: string }) {
+  return (
+    <motion.div
+      key="cafes-text-menu"
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -16 }}
+      transition={{ duration: 0.4 }}
+      className="grid grid-cols-1 lg:grid-cols-3 gap-5"
+    >
+      {cafeMenuSections.map((section) => (
+        <section
+          key={section.title}
+          className="rounded-2xl overflow-hidden"
+          style={{
+            background: "#fffaf2",
+            border: `2px solid ${color}`,
+            boxShadow: "0 2px 16px rgba(44,44,44,0.06)",
+          }}
+        >
+          <div
+            className="px-5 py-3 text-center"
+            style={{
+              background: color,
+              color: textColor,
+              fontFamily: "'Nunito', sans-serif",
+              fontSize: 15,
+              fontWeight: 900,
+              letterSpacing: 1,
+            }}
+          >
+            {section.title}
+          </div>
+          <div className="p-5">
+            <div className="space-y-3">
+              {section.items.map((item) => (
+                <div
+                  key={item.name}
+                  className="flex items-baseline gap-2"
+                  style={{
+                    fontFamily: "'Nunito', sans-serif",
+                    color: "#2C2C2C",
+                    fontSize: 14,
+                    fontWeight: 800,
+                  }}
+                >
+                  <span className="shrink-0">{item.name}</span>
+                  <span
+                    className="min-w-4 flex-1 border-b"
+                    style={{ borderColor: "rgba(44,44,44,0.35)", borderBottomStyle: "dotted" }}
+                  />
+                  <span className="shrink-0" style={{ color: textColor }}>
+                    {item.price}
+                  </span>
+                </div>
+              ))}
+            </div>
+            {section.subtitle && (
+              <p
+                className="mt-5 rounded-full px-4 py-2 text-center"
+                style={{
+                  background: "#F7F6F2",
+                  color: textColor,
+                  fontFamily: "'Nunito', sans-serif",
+                  fontSize: 12,
+                  fontWeight: 900,
+                  letterSpacing: 0.8,
+                }}
+              >
+                {section.subtitle}
+              </p>
+            )}
+          </div>
+        </section>
+      ))}
+    </motion.div>
+  );
+}
+
 function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
@@ -339,6 +448,7 @@ export function Menu() {
     active === "bubbletea"
       ? menuData.bubbletea.filter((item) => item.tag === activeBubbleTeaTag)
       : menuData[active];
+  const currentItemCount = active === "cafes" ? cafeMenuItemCount : currentItems.length;
 
   return (
     <section id="menu" style={{ background: "#F7F6F2", padding: "96px 0" }}>
@@ -423,7 +533,7 @@ export function Menu() {
                 {current.label}
               </h3>
               <p style={{ fontFamily: "'Nunito', sans-serif", fontSize: 13, color: "#7B8478", fontWeight: 600 }}>
-                {currentItems.length} création{currentItems.length > 1 ? "s" : ""}
+                {currentItemCount} création{currentItemCount > 1 ? "s" : ""}
               </p>
             </div>
           </motion.div>
@@ -458,19 +568,23 @@ export function Menu() {
 
         {/* Items grid */}
         <AnimatePresence mode="wait">
-          <motion.div
-            key={active === "bubbletea" ? `${active}-${activeBubbleTeaTag}` : active}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
-          >
-            {currentItems.map((item, i) => (
-              <MenuCard
-                key={item.name + i}
-                item={item}
-                color={current.color}
-                textColor={current.textColor}
-              />
-            ))}
-          </motion.div>
+          {active === "cafes" ? (
+            <CafeMenuSections color={current.color} textColor={current.textColor} />
+          ) : (
+            <motion.div
+              key={active === "bubbletea" ? `${active}-${activeBubbleTeaTag}` : active}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
+            >
+              {currentItems.map((item, i) => (
+                <MenuCard
+                  key={item.name + i}
+                  item={item}
+                  color={current.color}
+                  textColor={current.textColor}
+                />
+              ))}
+            </motion.div>
+          )}
         </AnimatePresence>
 
         {/* Category note */}
