@@ -1,5 +1,10 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "motion/react";
+import passionAnanas from "@/assets/bubbletea/passion-ananas.png";
+import peche from "@/assets/bubbletea/peche.png";
+import fruitsRouges from "@/assets/bubbletea/fruits-rouges.png";
+import cocoAnanas from "@/assets/bubbletea/coco-ananas.png";
+import pastequeCitron from "@/assets/bubbletea/pasteque-citron.png";
 
 type MenuItem = {
   name: string;
@@ -39,11 +44,11 @@ const categories: MenuCategory[] = [
     bgColor: "#f5f3ff",
     textColor: "#5b21b6",
     items: [
-      { name: "Passion & Ananas", description: "Perles de fruits, sirop passion, the.", price: "14–16 DT", image: bubbleTeaImg, tag: "Perles de Fruits" },
-      { name: "Pêche", description: "Perles de pêche, sirop fruité, the.", price: "14–16 DT", image: tigerSugar, tag: "Perles de Fruits" },
-      { name: "Fruits Rouges", description: "Sirop framboise, perles de fruits rouges.", price: "14–16 DT", image: bubbleTeaImg, tag: "Perles de Fruits" },
-      { name: "Coco & Ananas", description: "Coco de coco, sirop ananas, the.", price: "14–16 DT", image: tigerSugar, tag: "Perles de Fruits" },
-      { name: "Pastèque & Citron", description: "Sirop pastèque, zeste citron, perles.", price: "14–16 DT", image: bubbleTeaImg, tag: "Perles de Fruits" },
+      { name: "Passion & Ananas", description: "Perles de fruits, sirop passion, the.", price: "14–16 DT", image: passionAnanas, tag: "Perles de Fruits" },
+      { name: "Pêche", description: "Perles de pêche, sirop fruité, the.", price: "14–16 DT", image: peche, tag: "Perles de Fruits" },
+      { name: "Fruits Rouges", description: "Sirop framboise, perles de fruits rouges.", price: "14–16 DT", image: fruitsRouges, tag: "Perles de Fruits" },
+      { name: "Coco & Ananas", description: "Coco de coco, sirop ananas, the.", price: "14–16 DT", image: cocoAnanas, tag: "Perles de Fruits" },
+      { name: "Pastèque & Citron", description: "Sirop pastèque, zeste citron, perles.", price: "14–16 DT", image: pastequeCitron, tag: "Perles de Fruits" },
       { name: "Matcha", description: "Matcha japonais premium.", price: "12–14 DT", image: tigerSugar, tag: "Matcha" },
       { name: "Matcha Latte", description: "Matcha, lait onctueux.", price: "12–14 DT", image: bubbleTeaImg, tag: "Matcha" },
       { name: "Ice Mango Matcha", description: "Matcha glacé, mangue fraîche.", price: "16 DT", image: tigerSugar, tag: "Matcha" },
