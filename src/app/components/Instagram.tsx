@@ -1,17 +1,24 @@
 import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 import { Instagram } from "lucide-react";
+import img1 from "../assets/images/IMG_6973.JPG";
+import img2 from "../assets/images/IMG_6985.JPG";
+import img3 from "../assets/images/IMG_7030.JPG";
+import img4 from "../assets/images/IMG_7031.JPG";
+import img5 from "../assets/images/IMG_7032.JPG";
+import img6 from "../assets/images/IMG_7069.JPG";
+import img7 from "../assets/images/IMG_7123.JPG";
+import img8 from "../assets/images/IMG_7681.JPG";
 
 const posts = [
-  { url: "https://images.unsplash.com/photo-1747016804753-866c3ed6b3b7?w=400&h=400&fit=crop&auto=format", alt: "Bubble teas colorés" },
-  { url: "https://images.unsplash.com/photo-1741243038487-1d835e67bcbf?w=400&h=400&fit=crop&auto=format", alt: "Tiger sugar drinks" },
-  { url: "https://images.unsplash.com/photo-1529892485617-25f63cd7b1e9?w=400&h=400&fit=crop&auto=format", alt: "Latte art" },
-  { url: "https://images.unsplash.com/photo-1759303380841-55c09244fd2b?w=400&h=400&fit=crop&auto=format", alt: "San Sebastian" },
-  { url: "https://images.unsplash.com/photo-1779442563698-11fad08a733e?w=400&h=400&fit=crop&auto=format", alt: "Terrasse café" },
-  { url: "https://images.unsplash.com/photo-1514995428455-447d4443fa7f?w=400&h=400&fit=crop&auto=format", alt: "Smoothie fraise" },
-  { url: "https://images.unsplash.com/photo-1622597467821-df79dcb4f94d?w=400&h=400&fit=crop&auto=format", alt: "Jus detox" },
-  { url: "https://images.unsplash.com/photo-1497636577773-f1231844b336?w=400&h=400&fit=crop&auto=format", alt: "Cappuccino" },
-  { url: "https://images.unsplash.com/photo-1773632996592-e150b9ed5059?w=400&h=400&fit=crop&auto=format", alt: "Cheesecake" },
+  { url: img1, alt: "img1" },
+  { url: img2, alt: "img2" },
+  { url: img3, alt: "img3" },
+  { url: img4, alt: "img4" },
+  { url: img5, alt: "img5" },
+  { url: img6, alt: "img6" },
+  { url: img7, alt: "img7" },
+  { url: img8, alt: "img8" },
 ];
 
 function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
