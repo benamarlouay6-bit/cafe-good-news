@@ -9,8 +9,7 @@ import img5 from "../../assets/5.jpeg";
 import img6 from "../../assets/6.jpeg";
 import img7 from "../../assets/7.jpeg";
 import img8 from "../../assets/8.jpeg";
-import img9 from "../../assets/9.jpeg";
-
+import img9 from "../../assets/9.png";
 
 const posts = [
   { url: img1, alt: "img1" },
