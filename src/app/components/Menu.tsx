@@ -19,12 +19,6 @@ import smoothieBottles from "@/assets/smoothies/smoothie-bottles.png";
 import icedSmoothie from "@/assets/smoothies/iced-smoothie.jpeg";
 import detoxBottles from "@/assets/jus-detox/detox-bottles.png";
 import detoxTable from "@/assets/jus-detox/detox-table.jpeg";
-import iceTeaPeche from "@/assets/thes-glaces/ice-tea-peche.png";
-import iceTeaFruitsRouges from "@/assets/thes-glaces/ice-tea-fruits-rouges.png";
-import iceTeaMangue from "@/assets/thes-glaces/ice-tea-mangue.png";
-import mojitoBottles from "@/assets/mojitos/mojito-bottles.png";
-import energyBottles from "@/assets/power-drinks/energy-bottles.png";
-import powerShake from "@/assets/power-drinks/power-shake.jpeg";
 import freshBottles from "@/assets/fresh-juices/fresh-bottles.png";
 import freshFruits from "@/assets/fresh-juices/fresh-fruits.jpeg";
 import flan from "@/assets/douceurs/flan.jpeg";
@@ -56,6 +50,12 @@ type CafeMenuSection = {
   title: string;
   items: { name: string; price: string }[];
   subtitle?: string;
+};
+
+type PowerDrinkItem = {
+  name: string;
+  ingredients: string;
+  prices: { size: string; price: string }[];
 };
 
 const menuData = {
@@ -95,35 +95,26 @@ const menuData = {
       { name: "GOOD Tonic", description: "Gingembre · Ananas · Carotte · Pomme · Curcuma", price: "10–16 DT", image: detoxTable, tag: "Détox" },
   ],
   cafes: [],
-  thesGlaces: [
-      { name: "Ice Tea Pêche", description: "Thé glacé aromatisé à la pêche.", price: "Sur demande", image: iceTeaPeche },
-      { name: "Ice Tea Fruits Rouges", description: "Thé glacé aux fruits rouges.", price: "Sur demande", image: iceTeaFruitsRouges },
-      { name: "Ice Tea Mangue", description: "Thé glacé à la mangue fraîche.", price: "Sur demande", image: iceTeaMangue },
-  ],
+  thesGlaces: [],
   mojitos: [
-      { name: "Pastèque", price: "12 DT", image: mojitoBottles },
-      { name: "Passion", price: "12 DT", image: mojitoBottles },
-      { name: "Mangue", price: "12 DT", image: mojitoBottles },
-      { name: "Virgin", price: "12 DT", image: mojitoBottles },
-      { name: "Melon", price: "12 DT", image: mojitoBottles },
-      { name: "Litchi", price: "12 DT", image: mojitoBottles },
-      { name: "Cassis", price: "12 DT", image: mojitoBottles },
-      { name: "Mûre", price: "12 DT", image: mojitoBottles },
-      { name: "Pomme Verte", price: "12 DT", image: mojitoBottles },
-      { name: "Pina Colada", price: "12 DT", image: mojitoBottles },
-      { name: "Framboise", price: "12 DT", image: mojitoBottles },
-      { name: "Limonade", price: "12 DT", image: mojitoBottles },
-      { name: "Myrtille", price: "12 DT", image: mojitoBottles },
-      { name: "Red Bull", price: "12 DT", image: mojitoBottles },
-      { name: "Fraise", price: "12 DT", image: mojitoBottles },
-      { name: "Blue", price: "12 DT", image: mojitoBottles },
+      { name: "Pastèque", price: "12 DT" },
+      { name: "Passion", price: "12 DT" },
+      { name: "Mangue", price: "12 DT" },
+      { name: "Virgin", price: "12 DT" },
+      { name: "Melon", price: "12 DT" },
+      { name: "Litchi", price: "12 DT" },
+      { name: "Cassis", price: "12 DT" },
+      { name: "Mûre", price: "12 DT" },
+      { name: "Pomme Verte", price: "12 DT" },
+      { name: "Pina Colada", price: "12 DT" },
+      { name: "Framboise", price: "12 DT" },
+      { name: "Limonade", price: "12 DT" },
+      { name: "Myrtille", price: "12 DT" },
+      { name: "Red Bull", price: "12 DT" },
+      { name: "Fraise", price: "12 DT" },
+      { name: "Blue", price: "12 DT" },
   ],
-  powerDrinks: [
-      { name: "Energy Drink", description: "Boisson énergisante premium.", price: "Sur demande", image: energyBottles },
-      { name: "Power Shake", description: "Protéines, fruits, énergie.", price: "Sur demande", image: powerShake },
-      { name: "Avocat Pineapple", description: "Avocat frais, ananas, boost naturel.", price: "Sur demande", image: energyBottles },
-      { name: "Avocat Power", description: "Avocat, épinard, citron, miel.", price: "Sur demande", image: powerShake },
-  ],
+  powerDrinks: [],
   freshJuices: [
       { name: "Jus Citron", description: "Citron pressé frais.", price: "7–9 DT", image: freshBottles },
       { name: "Jus Fraise", description: "Fraises fraîches mixées.", price: "7–9 DT", image: freshFruits },
@@ -196,6 +187,43 @@ const cafeMenuSections: CafeMenuSection[] = [
 
 const cafeMenuItemCount = cafeMenuSections.reduce((count, section) => count + section.items.length, 0);
 
+const powerDrinkItems: PowerDrinkItem[] = [
+  {
+    name: "ENERGY DRINK",
+    ingredients: "Banane, Avocat, Dattes, Lait Vanillé ou Yaourt",
+    prices: [
+      { size: "330 ml", price: "12 DT" },
+      { size: "400 ml", price: "14 DT" },
+    ],
+  },
+  {
+    name: "POWER SHAKE",
+    ingredients: "Banane, Avocat, Dattes, Lait Vanillé ou Yaourt",
+    prices: [
+      { size: "330 ml", price: "12 DT" },
+      { size: "400 ml", price: "14 DT" },
+    ],
+  },
+  {
+    name: "AVOCAT PINEAPPLE",
+    ingredients: "Avocat, Ananas, Yaourt",
+    prices: [
+      { size: "330 ml", price: "12 DT" },
+      { size: "400 ml", price: "14 DT" },
+    ],
+  },
+  {
+    name: "AVOCAT POWER",
+    ingredients: "Avocat, Dattes, Banane, Amandes, Miel, Fruits Secs",
+    prices: [
+      { size: "330 ml", price: "15 DT" },
+      { size: "400 ml", price: "18 DT" },
+    ],
+  },
+];
+
+const powerDrinkItemCount = powerDrinkItems.length + 1;
+
 const categories: MenuCategory[] = [
   {
     key: "bubbletea",
@@ -260,7 +288,6 @@ const categories: MenuCategory[] = [
     color: "#86efac",
     bgColor: "#f0fdf4",
     textColor: "#14532d",
-    note: "🌿 Tous nos mojitos sont sans alcool. Demandez nos tailles disponibles.",
   },
   {
     key: "powerDrinks",
@@ -270,7 +297,6 @@ const categories: MenuCategory[] = [
     color: "#fca5a5",
     bgColor: "#fff1f2",
     textColor: "#9f1239",
-    note: "💪 Supplément protéine disponible : +4 DT",
   },
   {
     key: "freshJuices",
@@ -445,6 +471,248 @@ function CafeMenuSections({ color, textColor }: { color: string; textColor: stri
   );
 }
 
+function IceTeaMenuSection({ color, textColor }: { color: string; textColor: string }) {
+  return (
+    <motion.section
+      key="the-glace-text-menu"
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -16 }}
+      transition={{ duration: 0.4 }}
+      className="max-w-3xl mx-auto rounded-2xl overflow-hidden"
+      style={{
+        background: "#fffaf2",
+        border: `2px solid ${color}`,
+        boxShadow: "0 2px 16px rgba(44,44,44,0.06)",
+      }}
+    >
+      <div
+        className="px-5 py-4 text-center"
+        style={{
+          background: color,
+          color: textColor,
+          fontFamily: "'Nunito', sans-serif",
+          fontSize: "clamp(1.1rem, 4vw, 1.8rem)",
+          fontWeight: 900,
+          letterSpacing: 1,
+        }}
+      >
+        THÉ GLACÉ (ICE TEA)
+      </div>
+      <div className="px-5 py-8 sm:px-8 text-center">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5">
+          <span
+            className="rounded-full px-6 py-3"
+            style={{
+              background: "#F7F6F2",
+              color: "#2C2C2C",
+              fontFamily: "'Nunito', sans-serif",
+              fontSize: 18,
+              fontWeight: 900,
+            }}
+          >
+            330 ml
+          </span>
+          <span
+            className="rounded-full px-7 py-3"
+            style={{
+              background: color,
+              color: textColor,
+              fontFamily: "'Nunito', sans-serif",
+              fontSize: 24,
+              fontWeight: 900,
+            }}
+          >
+            6 DT
+          </span>
+        </div>
+        <p
+          className="mt-7"
+          style={{
+            fontFamily: "'Playfair Display', serif",
+            fontSize: "clamp(1.25rem, 4vw, 2rem)",
+            color: "#2C2C2C",
+            fontWeight: 700,
+            lineHeight: 1.35,
+          }}
+        >
+          PÊCHE / FRUITS ROUGES / MANGUE
+        </p>
+      </div>
+    </motion.section>
+  );
+}
+
+function MojitosMenuSection({ items, color, textColor }: { items: MenuItem[]; color: string; textColor: string }) {
+  return (
+    <motion.section
+      key="mojitos-text-menu"
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -16 }}
+      transition={{ duration: 0.4 }}
+      className="max-w-5xl mx-auto rounded-2xl overflow-hidden"
+      style={{
+        background: "#fffaf2",
+        border: `2px solid ${color}`,
+        boxShadow: "0 2px 16px rgba(44,44,44,0.06)",
+      }}
+    >
+      <div
+        className="px-5 py-4 text-center"
+        style={{
+          background: color,
+          color: textColor,
+          fontFamily: "'Nunito', sans-serif",
+          fontSize: "clamp(1.1rem, 4vw, 1.8rem)",
+          fontWeight: 900,
+          letterSpacing: 1,
+        }}
+      >
+        MOJITOS
+      </div>
+      <div className="p-5 sm:p-8">
+        <div className="flex justify-center mb-7">
+          <span
+            className="rounded-full px-6 py-3"
+            style={{
+              background: color,
+              color: textColor,
+              fontFamily: "'Nunito', sans-serif",
+              fontSize: 18,
+              fontWeight: 900,
+            }}
+          >
+            400 ml
+          </span>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
+          {items.map((item) => (
+            <div
+              key={item.name}
+              className="flex items-baseline gap-2"
+              style={{
+                fontFamily: "'Nunito', sans-serif",
+                color: "#2C2C2C",
+                fontSize: 14,
+                fontWeight: 800,
+              }}
+            >
+              <span className="shrink-0 uppercase">{item.name}</span>
+              <span
+                className="min-w-4 flex-1 border-b"
+                style={{ borderColor: "rgba(44,44,44,0.35)", borderBottomStyle: "dotted" }}
+              />
+              <span className="shrink-0" style={{ color: textColor }}>
+                {item.price}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </motion.section>
+  );
+}
+
+function PowerDrinksMenuSection({ color, textColor }: { color: string; textColor: string }) {
+  return (
+    <motion.div
+      key="power-drinks-text-menu"
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -16 }}
+      transition={{ duration: 0.4 }}
+      className="grid grid-cols-1 md:grid-cols-2 gap-5"
+    >
+      {powerDrinkItems.map((item) => (
+        <section
+          key={item.name}
+          className="rounded-2xl overflow-hidden"
+          style={{
+            background: "#fffaf2",
+            border: `2px solid ${color}`,
+            boxShadow: "0 2px 16px rgba(44,44,44,0.06)",
+          }}
+        >
+          <div
+            className="px-5 py-3"
+            style={{
+              background: color,
+              color: textColor,
+              fontFamily: "'Nunito', sans-serif",
+              fontSize: 16,
+              fontWeight: 900,
+              letterSpacing: 0.8,
+            }}
+          >
+            {item.name}
+          </div>
+          <div className="p-5">
+            <p
+              style={{
+                fontFamily: "'Nunito', sans-serif",
+                fontSize: 14,
+                color: "#6b6b5e",
+                lineHeight: 1.6,
+                fontWeight: 700,
+              }}
+            >
+              {item.ingredients}
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {item.prices.map((option) => (
+                <span
+                  key={option.size}
+                  className="inline-flex items-center gap-2 rounded-full px-4 py-2"
+                  style={{
+                    background: "#F7F6F2",
+                    color: "#2C2C2C",
+                    fontFamily: "'Nunito', sans-serif",
+                    fontSize: 13,
+                    fontWeight: 900,
+                  }}
+                >
+                  <span>{option.size}</span>
+                  <span style={{ color: textColor }}>{option.price}</span>
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+      ))}
+      <section
+        className="rounded-2xl p-5 md:col-span-2 text-center"
+        style={{
+          background: color,
+          color: textColor,
+          boxShadow: "0 2px 16px rgba(44,44,44,0.06)",
+        }}
+      >
+        <h4
+          style={{
+            fontFamily: "'Nunito', sans-serif",
+            fontSize: 18,
+            fontWeight: 900,
+            letterSpacing: 1,
+          }}
+        >
+          SUPPLÉMENT PROTÉINE
+        </h4>
+        <p
+          className="mt-2"
+          style={{
+            fontFamily: "'Playfair Display', serif",
+            fontSize: 30,
+            fontWeight: 700,
+          }}
+        >
+          4 DT
+        </p>
+      </section>
+    </motion.div>
+  );
+}
+
 function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
@@ -469,7 +737,14 @@ export function Menu() {
     active === "bubbletea"
       ? menuData.bubbletea.filter((item) => item.tag === activeBubbleTeaTag)
       : menuData[active];
-  const currentItemCount = active === "cafes" ? cafeMenuItemCount : currentItems.length;
+  const currentItemCount =
+    active === "cafes"
+      ? cafeMenuItemCount
+      : active === "thesGlaces"
+        ? 3
+        : active === "powerDrinks"
+          ? powerDrinkItemCount
+          : currentItems.length;
 
   return (
     <section id="menu" style={{ background: "#F7F6F2", padding: "96px 0" }}>
@@ -591,6 +866,12 @@ export function Menu() {
         <AnimatePresence mode="wait">
           {active === "cafes" ? (
             <CafeMenuSections color={current.color} textColor={current.textColor} />
+          ) : active === "thesGlaces" ? (
+            <IceTeaMenuSection color={current.color} textColor={current.textColor} />
+          ) : active === "mojitos" ? (
+            <MojitosMenuSection items={currentItems} color={current.color} textColor={current.textColor} />
+          ) : active === "powerDrinks" ? (
+            <PowerDrinksMenuSection color={current.color} textColor={current.textColor} />
           ) : (
             <motion.div
               key={active === "bubbletea" ? `${active}-${activeBubbleTeaTag}` : active}
