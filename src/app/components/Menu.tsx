@@ -21,10 +21,6 @@ import detoxBottles from "@/assets/jus-detox/detox-bottles.png";
 import detoxTable from "@/assets/jus-detox/detox-table.jpeg";
 import freshBottles from "@/assets/fresh-juices/fresh-bottles.png";
 import freshFruits from "@/assets/fresh-juices/fresh-fruits.jpeg";
-import flan from "@/assets/douceurs/flan.jpeg";
-import cookieChocolat from "@/assets/douceurs/cookie-chocolat.jpeg";
-import cookiePistache from "@/assets/douceurs/cookie-pistache.jpeg";
-import brunchSweets from "@/assets/douceurs/brunch-sweets.jpeg";
 
 type MenuItem = {
   name: string;
@@ -61,6 +57,11 @@ type PowerDrinkItem = {
 type CapacityInfo = {
   size: string;
   price?: string;
+};
+
+type TextMenuSection = {
+  title: string;
+  items: { name: string; price: string; note?: string }[];
 };
 
 const menuData = {
@@ -128,18 +129,7 @@ const menuData = {
       { name: "Jus Pêche", description: "Pêche fraîche mixée.", price: "7–9 DT", image: freshBottles },
       { name: "Jus Kiwi", description: "Kiwi frais pressé.", price: "7–9 DT", image: freshFruits },
   ],
-  douceurs: [
-      { name: "Yaourts Glacés", description: "Yaourt onctueux aux saveurs variées.", price: "Sur demande", image: brunchSweets, tag: "Glacées" },
-      { name: "Granité Fruits", description: "Granité rafraîchissant aux fruits frais.", price: "Sur demande", image: flan, tag: "Glacées" },
-      { name: "Cookies", description: "Cookies maison croustillants.", price: "Sur demande", image: cookieChocolat, tag: "Sucrées" },
-      { name: "Cheesecakes", description: "Cheesecakes au fromage crémeux.", price: "Sur demande", image: cookiePistache, tag: "Sucrées" },
-      { name: "Tiramisu", description: "Tiramisu classique maison.", price: "Sur demande", image: flan, tag: "Sucrées" },
-      { name: "Cakes", description: "Cakes moelleux variés.", price: "Sur demande", image: brunchSweets, tag: "Sucrées" },
-      { name: "Fondants", description: "Fondants au chocolat coulant.", price: "Sur demande", image: cookieChocolat, tag: "Sucrées" },
-      { name: "Crêpes Sucrées", description: "Crêpes garnies de toppings au choix.", price: "Sur demande", image: cookiePistache, tag: "Sucrées" },
-      { name: "Pancakes", description: "Pancakes moelleux maison.", price: "Sur demande", image: flan, tag: "Sucrées" },
-      { name: "Gaufres", description: "Gaufres croustillantes garnies.", price: "Sur demande", image: brunchSweets, tag: "Sucrées" },
-  ],
+  douceurs: [],
 } satisfies Record<string, MenuItem[]>;
 
 type MenuCategoryKey = keyof typeof menuData;
@@ -228,6 +218,143 @@ const powerDrinkItems: PowerDrinkItem[] = [
 ];
 
 const powerDrinkItemCount = powerDrinkItems.length + 1;
+
+const douceurMenuGroups: { title: string; sections: TextMenuSection[] }[] = [
+  {
+    title: "DOUCEURS SUCRÉES",
+    sections: [
+      {
+        title: "COOKIES",
+        items: [
+          { name: "Pistache Framboise", price: "9 DT" },
+          { name: "Noisette, Chocolat Blanc, Noix de Pécan", price: "8 DT" },
+        ],
+      },
+      {
+        title: "CHEESECAKES",
+        items: [
+          { name: "Nutella", price: "12 DT" },
+          { name: "Spéculoos", price: "12 DT" },
+          { name: "Fruits Rouges", price: "14 DT" },
+          { name: "Pistache Framboise", price: "16 DT" },
+          { name: "Caramel Beurre Salé", price: "12 DT" },
+        ],
+      },
+      {
+        title: "TIRAMISU",
+        items: [
+          { name: "Classique", price: "10 DT" },
+          { name: "Fruits Rouges", price: "14 DT" },
+          { name: "Mangue", price: "14 DT" },
+          { name: "Matcha", price: "14 DT" },
+          { name: "Brownie", price: "8 DT" },
+          { name: "Courant d'Air", price: "8 DT" },
+        ],
+      },
+      {
+        title: "CAKES",
+        items: [
+          { name: "Citron", price: "5 DT" },
+          { name: "Orange", price: "5 DT" },
+          { name: "Healthy", price: "6 DT" },
+          { name: "Chocolat", price: "5 DT" },
+        ],
+      },
+      {
+        title: "FONDANTS",
+        items: [
+          { name: "Chocolat", price: "8 DT" },
+          { name: "Noisette", price: "9 DT" },
+          { name: "Pistache", price: "12 DT" },
+        ],
+      },
+      {
+        title: "CRÊPES SUCRÉES / PAIN CAKES",
+        items: [
+          { name: "Nutella", price: "12 DT" },
+          { name: "Spéculoos", price: "13 DT" },
+          { name: "Brownie Caramel Salé Beurre", price: "15 DT" },
+          { name: "Pistache Framboise", price: "18 DT" },
+          {
+            name: "Good News",
+            price: "22 DT",
+            note: "Crêpe tagliatelle avec 3 sauces au choix, fruits de saison et fruits secs",
+          },
+          { name: "SUPPLÉMENT FRUITS SECS", price: "3 DT" },
+        ],
+      },
+      {
+        title: "GAUFRES",
+        items: [
+          { name: "Gaufre Épi", price: "8 DT" },
+          { name: "Gaufre Ronde", price: "8 DT" },
+          { name: "Gaufre Spéculoos", price: "13 DT" },
+          { name: "Gaufre Nutella", price: "12 DT" },
+          { name: "Gaufre Caramel Beurre Salé", price: "12 DT" },
+          { name: "Gaufre aux Fruits", price: "14 DT" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "CRÊPES SALÉES",
+    sections: [
+      {
+        title: "CRÊPES SALÉES",
+        items: [
+          { name: "Crêpe au Thon et Fromage", price: "14 DT" },
+          { name: "Crêpe au Jambon et Fromage", price: "12 DT" },
+          { name: "Crêpe au Thon, Jambon et Fromage", price: "16 DT" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "OMELETTES",
+    sections: [
+      {
+        title: "OMELETTES",
+        items: [
+          { name: "Végétarienne", price: "9 DT" },
+          { name: "Thon et Fromage", price: "14 DT" },
+          { name: "Jambon et Fromage", price: "12 DT" },
+          { name: "Thon, Jambon et Fromage", price: "16 DT" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "DOUCEURS GLACÉES",
+    sections: [
+      {
+        title: "DOUCEURS GLACÉES",
+        items: [
+          { name: "Yaourt Glacé Fruits Rouges", price: "12 DT" },
+          { name: "Yaourt Glacé Caramel", price: "11 DT" },
+          { name: "Yaourt Glacé Mangue Passion", price: "11 DT" },
+          { name: "Yaourt Glacé Nutella", price: "11 DT" },
+        ],
+      },
+      {
+        title: "SUPPLÉMENTS",
+        items: [
+          { name: "Supplément Sauce", price: "3 DT" },
+          {
+            name: "Supplément Toppic",
+            price: "3 DT",
+            note: "(Cacahuète, Noisette, Amande, Chocolat Pépite...)",
+          },
+        ],
+      },
+    ],
+  },
+];
+
+const douceurMenuItemCount = douceurMenuGroups.reduce(
+  (groupCount, group) =>
+    groupCount + group.sections.reduce((sectionCount, section) => sectionCount + section.items.length, 0),
+  0
+);
 
 const categories: MenuCategory[] = [
   {
@@ -718,6 +845,107 @@ function PowerDrinksMenuSection({ color, textColor }: { color: string; textColor
   );
 }
 
+function MenuPriceRow({ item, textColor }: { item: TextMenuSection["items"][number]; textColor: string }) {
+  return (
+    <div>
+      <div
+        className="flex items-baseline gap-2"
+        style={{
+          fontFamily: "'Nunito', sans-serif",
+          color: "#2C2C2C",
+          fontSize: 14,
+          fontWeight: 800,
+        }}
+      >
+        <span className="shrink min-w-0">{item.name}</span>
+        <span
+          className="min-w-4 flex-1 border-b"
+          style={{ borderColor: "rgba(44,44,44,0.35)", borderBottomStyle: "dotted" }}
+        />
+        <span className="shrink-0" style={{ color: textColor }}>
+          {item.price}
+        </span>
+      </div>
+      {item.note && (
+        <p
+          className="mt-1 pr-10"
+          style={{
+            fontFamily: "'Nunito', sans-serif",
+            fontSize: 12,
+            color: "#6b6b5e",
+            lineHeight: 1.45,
+            fontWeight: 700,
+          }}
+        >
+          {item.note}
+        </p>
+      )}
+    </div>
+  );
+}
+
+function DouceursMenuSection({ color, textColor }: { color: string; textColor: string }) {
+  return (
+    <motion.div
+      key="douceurs-text-menu"
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -16 }}
+      transition={{ duration: 0.4 }}
+      className="space-y-6"
+    >
+      {douceurMenuGroups.map((group) => (
+        <section
+          key={group.title}
+          className="rounded-2xl overflow-hidden"
+          style={{
+            background: "#fffaf2",
+            border: `2px solid ${color}`,
+            boxShadow: "0 2px 16px rgba(44,44,44,0.06)",
+          }}
+        >
+          <div
+            className="px-5 py-3 text-center"
+            style={{
+              background: color,
+              color: textColor,
+              fontFamily: "'Nunito', sans-serif",
+              fontSize: "clamp(1rem, 3vw, 1.45rem)",
+              fontWeight: 900,
+              letterSpacing: 1,
+            }}
+          >
+            {group.title}
+          </div>
+          <div className="p-5 sm:p-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+            {group.sections.map((section) => (
+              <div key={section.title} className="rounded-xl p-4" style={{ background: "#F7F6F2" }}>
+                <h4
+                  className="mb-4"
+                  style={{
+                    fontFamily: "'Nunito', sans-serif",
+                    fontSize: 14,
+                    color: textColor,
+                    fontWeight: 900,
+                    letterSpacing: 0.8,
+                  }}
+                >
+                  {section.title}
+                </h4>
+                <div className="space-y-3">
+                  {section.items.map((item) => (
+                    <MenuPriceRow key={`${section.title}-${item.name}`} item={item} textColor={textColor} />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
+    </motion.div>
+  );
+}
+
 function CapacityHeader({
   title,
   capacities,
@@ -815,6 +1043,8 @@ export function Menu() {
         ? 3
         : active === "powerDrinks"
           ? powerDrinkItemCount
+          : active === "douceurs"
+            ? douceurMenuItemCount
           : currentItems.length;
 
   return (
@@ -965,6 +1195,8 @@ export function Menu() {
             <MojitosMenuSection items={currentItems} color={current.color} textColor={current.textColor} />
           ) : active === "powerDrinks" ? (
             <PowerDrinksMenuSection color={current.color} textColor={current.textColor} />
+          ) : active === "douceurs" ? (
+            <DouceursMenuSection color={current.color} textColor={current.textColor} />
           ) : (
             <motion.div
               key={active === "bubbletea" ? `${active}-${activeBubbleTeaTag}` : active}
