@@ -10,6 +10,11 @@ import brownSugarLatte from "@/assets/bubbletea/brown-sugar.png";
 import roseFramboiseLatte from "@/assets/bubbletea/rose-framboise.png";
 import oreoLatte from "@/assets/bubbletea/oreo.png";
 import taroLatte from "@/assets/bubbletea/taro.png";
+import matchaImage from "@/assets/matcha/matcha.png";
+import matchaLatteImage from "@/assets/matcha/matcha-latte.png";
+import iceMangoMatchaImage from "@/assets/matcha/ice-mango-matcha.png";
+import iceStrawberryMatchaImage from "@/assets/matcha/ice-strawberry-matcha.png";
+import icePassionMatchaImage from "@/assets/matcha/ice-passion-matcha.png";
 import smoothieBottles from "@/assets/smoothies/smoothie-bottles.png";
 import icedSmoothie from "@/assets/smoothies/iced-smoothie.jpeg";
 import detoxBottles from "@/assets/jus-detox/detox-bottles.png";
@@ -65,6 +70,13 @@ const menuData = {
       { name: "Rose & Framboise", description: "Sirop de rose, Perles de fraise, Confiture de framboise, Thé, Lait, Glaçons.", prices: [{ size: "330 ml", price: "14 DT" }, { size: "400 ml", price: "16 DT" }], image: roseFramboiseLatte, tag: "Latte" },
       { name: "Oréo", description: "Sirop de vanille, Perles de tapioca, Coulis de chocolat, Brisures d'Oréo, Thé, Lait, Chantilly, Glaçons.", prices: [{ size: "330 ml", price: "14 DT" }, { size: "400 ml", price: "16 DT" }], image: oreoLatte, tag: "Latte" },
       { name: "Taro", description: "Poudre de taro, Perles de tapioca, Thé, Lait, Glaçons.", prices: [{ size: "330 ml", price: "14 DT" }, { size: "400 ml", price: "16 DT" }], image: taroLatte, tag: "Latte" },
+  ],
+  matcha: [
+      { name: "Matcha", price: "12 DT", image: matchaImage },
+      { name: "Matcha Latte", price: "12 DT", image: matchaLatteImage },
+      { name: "Ice Mango Matcha", price: "14 DT", image: iceMangoMatchaImage },
+      { name: "Ice Strawberry Matcha", price: "13 DT", image: iceStrawberryMatchaImage },
+      { name: "Ice Passion Matcha", price: "16 DT", image: icePassionMatchaImage },
   ],
   smoothies: [
       { name: "Passionata", description: "Mangue · Passion · Ananas", price: "7–9 DT", image: icedSmoothie },
@@ -193,6 +205,15 @@ const categories: MenuCategory[] = [
     color: "#c4b5fd",
     bgColor: "#f5f3ff",
     textColor: "#5b21b6",
+  },
+  {
+    key: "matcha",
+    id: "matcha",
+    label: "Matcha",
+    icon: "🍵",
+    color: "#8FA192",
+    bgColor: "#eef4ec",
+    textColor: "#425447",
   },
   {
     key: "smoothies",
