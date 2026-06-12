@@ -15,10 +15,6 @@ import matchaLatteImage from "@/assets/matcha/matcha-latte.png";
 import iceMangoMatchaImage from "@/assets/matcha/ice-mango-matcha.png";
 import iceStrawberryMatchaImage from "@/assets/matcha/ice-strawberry-matcha.png";
 import icePassionMatchaImage from "@/assets/matcha/ice-passion-matcha.png";
-import smoothieBottles from "@/assets/smoothies/smoothie-bottles.png";
-import icedSmoothie from "@/assets/smoothies/iced-smoothie.jpeg";
-import detoxBottles from "@/assets/jus-detox/detox-bottles.png";
-import detoxTable from "@/assets/jus-detox/detox-table.jpeg";
 
 import avocadoDrinkImage from "@/assets/smoothies/avocado-drink.jpeg";
 import cocoLocoImage from "@/assets/smoothies/coco-loco.jpeg";
@@ -75,8 +71,7 @@ type TextMenuSection = {
 };
 
 type FreshJuicePrice = {
-  size: "330 ml" | "400 ml" | "1 L" | "5
-   L";
+  size: "330 ml" | "400 ml" | "500 ml" | "1 L";
   price: string;
 };
 
