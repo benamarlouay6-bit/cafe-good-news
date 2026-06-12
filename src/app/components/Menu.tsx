@@ -22,6 +22,15 @@ import detoxTable from "@/assets/jus-detox/detox-table.jpeg";
 import freshBottles from "@/assets/fresh-juices/fresh-bottles.png";
 import freshFruits from "@/assets/fresh-juices/fresh-fruits.jpeg";
 
+import avocadoDrinkImage from "@/assets/smoothies/avocado-drink.png";
+import cocoLocoImage from "@/assets/smoothies/coco-loco.png";
+import dominicoImage from "@/assets/smoothies/dominico.png";
+import kiwiSunImage from "@/assets/smoothies/kiwi-sun.png";
+import marabellaImage from "@/assets/smoothies/marabella.png";
+import miamiImage from "@/assets/smoothies/miami.png";
+import passionataImage from "@/assets/smoothies/passionata.png";
+import soleilDeFruitsImage from "@/assets/smoothies/soleil-de-fruits.png";
+
 type MenuItem = {
   name: string;
   description?: string;
@@ -85,14 +94,14 @@ const menuData = {
       { name: "Ice Passion Matcha", price: "16 DT", image: icePassionMatchaImage },
   ],
   smoothies: [
-      { name: "Passionata", description: "Mangue · Passion · Ananas", price: "7–9 DT", image: icedSmoothie },
-      { name: "Marabella", description: "Fraise · Framboise · Myrtille", price: "7–9 DT", image: smoothieBottles },
-      { name: "Avocado Drink", description: "Avocat · Banane", price: "7–9 DT", image: icedSmoothie },
-      { name: "Coco Loco", description: "Coco · Passion · Melon", price: "7–9 DT", image: smoothieBottles },
-      { name: "Kiwi Sun", description: "Ananas · Banane · Kiwi", price: "7–9 DT", image: icedSmoothie },
-      { name: "Dominico", description: "Ananas · Banane", price: "7–9 DT", image: smoothieBottles },
-      { name: "Miami", description: "Mangue Prima · Banane", price: "7–9 DT", image: icedSmoothie },
-      { name: "Soleil de Fruits", description: "Mangue Prima · Palma", price: "7–9 DT", image: smoothieBottles },
+      { name: "Passionata", description: "Mangue · Passion · Ananas", price: "7–9 DT", image: passionataImage },
+      { name: "Marabella", description: "Fraise · Framboise · Myrtille", price: "7–9 DT", image: marabellaImage },
+      { name: "Avocado Drink", description: "Avocat · Banane", price: "7–9 DT", image: avocadoDrinkImage },
+      { name: "Coco Loco", description: "Coco · Passion · Melon", price: "7–9 DT", image: cocoLocoImage },
+      { name: "Kiwi Sun", description: "Ananas · Banane · Kiwi", price: "7–9 DT", image: kiwiSunImage },
+      { name: "Dominico", description: "Ananas · Banane", price: "7–9 DT", image: dominicoImage },
+      { name: "Miami", description: "Mangue Prima · Banane", price: "7–9 DT", image: miamiImage },
+      { name: "Soleil de Fruits", description: "Mangue Prima · Palma", price: "7–9 DT", image: soleilDeFruitsImage },
   ],
   jusDetox: [
       { name: "GOOD Hydration", description: "Pastèque · Concombre · Citron · Menthe", price: "10–16 DT", image: detoxBottles, tag: "Détox" },
