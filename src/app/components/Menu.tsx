@@ -19,8 +19,6 @@ import smoothieBottles from "@/assets/smoothies/smoothie-bottles.png";
 import icedSmoothie from "@/assets/smoothies/iced-smoothie.jpeg";
 import detoxBottles from "@/assets/jus-detox/detox-bottles.png";
 import detoxTable from "@/assets/jus-detox/detox-table.jpeg";
-import freshBottles from "@/assets/fresh-juices/fresh-bottles.png";
-import freshFruits from "@/assets/fresh-juices/fresh-fruits.jpeg";
 
 import avocadoDrinkImage from "@/assets/smoothies/avocado-drink.jpeg";
 import cocoLocoImage from "@/assets/smoothies/coco-loco.jpeg";
@@ -134,12 +132,18 @@ const menuData = {
   ],
   powerDrinks: [],
   freshJuices: [
-      { name: "Jus Citron", description: "Citron pressé frais.", price: "7–9 DT", image: freshBottles },
-      { name: "Jus Fraise", description: "Fraises fraîches mixées.", price: "7–9 DT", image: freshFruits },
-      { name: "Jus Mangue", description: "Mangue fraîche.", price: "7–9 DT", image: freshBottles },
-      { name: "Jus Ananas", description: "Ananas frais pressé.", price: "7–9 DT", image: freshFruits },
-      { name: "Jus Pêche", description: "Pêche fraîche mixée.", price: "7–9 DT", image: freshBottles },
-      { name: "Jus Kiwi", description: "Kiwi frais pressé.", price: "7–9 DT", image: freshFruits },
+      { name: "BERGAMOTE", prices: [{ size: "330 ml", price: "10 DT" }, { size: "1 L", price: "38 DT" }] },
+      { name: "CITRON, BERGAMOTE", prices: [{ size: "330 ml", price: "9 DT" }, { size: "1 L", price: "35 DT" }] },
+      { name: "FRAISE, FRAMBOISE", prices: [{ size: "330 ml", price: "16 DT" }, { size: "1 L", price: "70 DT" }] },
+      { name: "KIWI, MENTHE, ANANAS", prices: [{ size: "330 ml", price: "15 DT" }, { size: "1 L", price: "60 DT" }] },
+      { name: "AVOCAT", prices: [{ size: "330 ml", price: "25 DT" }, { size: "1 L", price: "N.D" }] },
+      { name: "BANANE, DATTES, FRUITS SECS", prices: [{ size: "330 ml", price: "20 DT" }, { size: "1 L", price: "80 DT" }] },
+      { name: "FRAMBOISE, BANANE", prices: [{ size: "330 ml", price: "20 DT" }, { size: "1 L", price: "90 DT" }] },
+      { name: "FRAMBOISE", prices: [{ size: "330 ml", price: "N.D" }, { size: "1 L", price: "100 DT" }] },
+      { name: "FRAMBOISE, ANANAS", prices: [{ size: "330 ml", price: "20 DT" }, { size: "1 L", price: "80 DT" }] },
+      { name: "HINDI", prices: [{ size: "330 ml", price: "15 DT" }, { size: "1 L", price: "40 DT" }] },
+      { name: "RAISIN ROUGE", prices: [{ size: "330 ml", price: "20 DT" }, { size: "1 L", price: "60 DT" }] },
+      { name: "RAISIN BLANC", prices: [{ size: "330 ml", price: "18 DT" }, { size: "1 L", price: "60 DT" }] },
   ],
   douceurs: [],
 } satisfies Record<string, MenuItem[]>;
