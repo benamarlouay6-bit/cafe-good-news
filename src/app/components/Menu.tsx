@@ -28,6 +28,9 @@ import soleilDeFruitsImage from "@/assets/smoothies/soleil-de-fruits.jpeg";
 import goodDetoxImage from "@/assets/jus-detox/good-detox.jpeg";
 import goodHydrationImage from "@/assets/jus-detox/good-hydration.jpeg";
 import goodTonicImage from "@/assets/jus-detox/good-tonic.jpeg";
+import granitaFruitsImage from "@/assets/smoothies/soleil-de-fruits.jpeg";
+import fruitCupImage from "@/assets/smoothies/marabella.jpeg";
+import icedTeaFruitCanImage from "@/assets/jus-detox/good-hydration.jpeg";
 
 type MenuItem = {
   name: string;
@@ -84,6 +87,13 @@ type FreshJuiceItem = {
 type FreshJuiceSection = {
   title: string;
   items: FreshJuiceItem[];
+};
+
+type RefreshmentItem = {
+  name: string;
+  subtitle?: string;
+  image: string;
+  prices: { label?: string; price: string }[];
 };
 
 const menuData = {
@@ -144,6 +154,7 @@ const menuData = {
   ],
   powerDrinks: [],
   freshJuices: [],
+  refreshments: [],
   douceurs: [],
 } satisfies Record<string, MenuItem[]>;
 
@@ -240,6 +251,28 @@ const freshJuiceCapacities: FreshJuicePrice["size"][] = ["330 ml", "400 ml", "1 
 const freshJuiceFruits = ["Citron", "Fraise", "Kiwi", "Mangue", "Ananas", "Melon", "Passion", "Pêche", "Goyave"];
 
 const freshJuiceItemCount = freshJuiceSections.reduce((count, section) => count + section.items.length, 0);
+
+const refreshmentItems: RefreshmentItem[] = [
+  {
+    name: "🍧 Granité Fruits",
+    subtitle: "(Selon saveurs disponibles sur place)",
+    image: granitaFruitsImage,
+    prices: [{ price: "5 DT" }],
+  },
+  {
+    name: "🍓 Gobelet aux Fruits",
+    image: fruitCupImage,
+    prices: [
+      { label: "Small", price: "7 DT" },
+      { label: "Large", price: "15 DT" },
+    ],
+  },
+  {
+    name: "🥤 Canette aux Fruits avec Thé Glacé",
+    image: icedTeaFruitCanImage,
+    prices: [{ price: "12 DT" }],
+  },
+];
 
 const cafeMenuSections: CafeMenuSection[] = [
   {
@@ -543,6 +576,15 @@ const categories: MenuCategory[] = [
     color: "#fde68a",
     bgColor: "#fffbeb",
     textColor: "#92400e",
+  },
+  {
+    key: "refreshments",
+    id: "refreshments",
+    label: "Refreshments",
+    icon: "🥤",
+    color: "#67e8f9",
+    bgColor: "#ecfeff",
+    textColor: "#155e75",
   },
   {
     key: "douceurs",
@@ -955,6 +997,98 @@ function PowerDrinksMenuSection({ color, textColor }: { color: string; textColor
           4 DT
         </p>
       </section>
+    </motion.div>
+  );
+}
+
+function RefreshmentsMenuSection({ color, textColor }: { color: string; textColor: string }) {
+  return (
+    <motion.div
+      key="refreshments-menu"
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -16 }}
+      transition={{ duration: 0.4 }}
+      className="grid grid-cols-1 md:grid-cols-3 gap-5"
+    >
+      {refreshmentItems.map((item, index) => (
+        <motion.article
+          key={item.name}
+          layout
+          initial={{ opacity: 0, y: 18, scale: 0.97 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: -12, scale: 0.97 }}
+          transition={{ duration: 0.38, delay: index * 0.04 }}
+          className="group overflow-hidden rounded-2xl flex flex-col"
+          style={{
+            background: "#fffaf2",
+            border: `2px solid ${color}`,
+            boxShadow: "0 18px 42px rgba(44,44,44,0.09)",
+          }}
+        >
+          <div className="relative h-56 overflow-hidden sm:h-64 md:h-72">
+            <img
+              src={item.image}
+              alt={item.name}
+              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(to bottom, rgba(44,44,44,0.04) 0%, rgba(44,44,44,0.08) 45%, rgba(44,44,44,0.42) 100%)",
+              }}
+            />
+            <div className="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2">
+              {item.prices.map((option) => (
+                <span
+                  key={`${item.name}-${option.label ?? option.price}`}
+                  className="inline-flex items-center gap-2 rounded-full px-4 py-2"
+                  style={{
+                    background: color,
+                    color: textColor,
+                    fontFamily: "'Nunito', sans-serif",
+                    fontSize: 14,
+                    fontWeight: 900,
+                    boxShadow: "0 8px 22px rgba(44,44,44,0.18)",
+                  }}
+                >
+                  {option.label && <span style={{ fontSize: 11, textTransform: "uppercase" }}>{option.label}</span>}
+                  <span style={{ fontSize: 18, lineHeight: 1 }}>{option.price}</span>
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-1 flex-col p-5">
+            <h4
+              style={{
+                fontFamily: "'Playfair Display', serif",
+                fontSize: "clamp(1.25rem, 3vw, 1.8rem)",
+                color: "#2C2C2C",
+                fontWeight: 700,
+                lineHeight: 1.12,
+              }}
+            >
+              {item.name}
+            </h4>
+            {item.subtitle && (
+              <p
+                className="mt-3 rounded-full px-4 py-2"
+                style={{
+                  background: "#F7F6F2",
+                  color: "#6b6b5e",
+                  fontFamily: "'Nunito', sans-serif",
+                  fontSize: 12,
+                  fontWeight: 800,
+                  lineHeight: 1.35,
+                }}
+              >
+                {item.subtitle}
+              </p>
+            )}
+          </div>
+        </motion.article>
+      ))}
     </motion.div>
   );
 }
@@ -1385,7 +1519,9 @@ export function Menu() {
             ? douceurMenuItemCount
             : active === "freshJuices"
               ? freshJuiceItemCount
-              : currentItems.length;
+              : active === "refreshments"
+                ? refreshmentItems.length
+                : currentItems.length;
 
   return (
     <section id="menu" style={{ background: "#F7F6F2", padding: "96px 0" }}>
@@ -1560,6 +1696,8 @@ export function Menu() {
             <PowerDrinksMenuSection color={current.color} textColor={current.textColor} />
           ) : active === "freshJuices" ? (
             <FreshJuicesMenuSection color={current.color} textColor={current.textColor} />
+          ) : active === "refreshments" ? (
+            <RefreshmentsMenuSection color={current.color} textColor={current.textColor} />
           ) : active === "douceurs" ? (
             <DouceursMenuSection color={current.color} textColor={current.textColor} />
           ) : (

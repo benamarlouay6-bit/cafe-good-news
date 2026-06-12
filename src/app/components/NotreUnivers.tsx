@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "motion/react";
+import image1 from "@/assets/notre-univers/image1.png";
 
 const vibes = [
   { icon: "🤝", title: "Partager", desc: "Un espace convivial pour se retrouver entre amis et famille." },
@@ -11,7 +12,7 @@ const vibes = [
 
 const photos = [
   {
-    url: "https://images.unsplash.com/photo-1779442563698-11fad08a733e?w=600&h=700&fit=crop&auto=format",
+    url: image1,
     alt: "Terrasse Good News",
     className: "row-span-2",
   },
