@@ -116,7 +116,7 @@ export function Hero() {
             margin: "16px auto 40px",
           }}
         >
-          Découvrez l'expérience GOOD NEWS : bubble tea, cafés signature, smoothies, desserts gourmands et boissons fraîches au cœur de Sfax.
+          Découvrez l'expérience GOOD NEWS : Bubble Tea, Cafés Signature, Smoothies, Desserts Gourmands et Boissons fraîches au cœur de Sfax.
         </motion.p>
 
         <motion.div
