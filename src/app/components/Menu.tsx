@@ -30,6 +30,10 @@ import marabellaImage from "@/assets/smoothies/marabella.jpeg";
 import miamiImage from "@/assets/smoothies/miami.jpeg";
 import passionataImage from "@/assets/smoothies/passionata.jpeg";
 import soleilDeFruitsImage from "@/assets/smoothies/soleil-de-fruits.jpeg";
+
+import goodDetoxImage from "@/assets/jus-detox/good-detox.jpeg";
+import goodHydrationImage from "@/assets/jus-detox/good-hydration.jpeg";
+import goodTonicImage from "@/assets/jus-detox/good-tonic.jpeg";
 type MenuItem = {
   name: string;
   description?: string;
@@ -103,10 +107,10 @@ const menuData = {
       { name: "Soleil de Fruits", description: "Mangue Prima · Palma", price: "7–9 DT", image: soleilDeFruitsImage },
   ],
   jusDetox: [
-      { name: "GOOD Hydration", description: "Pastèque · Concombre · Citron · Menthe", price: "10–16 DT", image: detoxBottles, tag: "Détox" },
-      { name: "GOOD Detox", description: "Concombre · Pomme · Épinard · Citron", price: "10–16 DT", image: detoxTable, tag: "Détox" },
-      { name: "GOOD Juice Miles", description: "Kiwi · Ananas · Avocat · Citron", price: "10–16 DT", image: detoxBottles, tag: "Détox" },
-      { name: "GOOD Tonic", description: "Gingembre · Ananas · Carotte · Pomme · Curcuma", price: "10–16 DT", image: detoxTable, tag: "Détox" },
+      { name: "GOOD Hydration", description: "Pastèque · Concombre · Citron · Menthe", price: "10–16 DT", image: goodHydrationImage, tag: "Détox" },
+      { name: "GOOD Detox", description: "Concombre · Pomme · Épinard · Citron", price: "10–16 DT", image: goodDetoxImage, tag: "Détox" },
+      { name: "GOOD Juice Miles", description: "Kiwi · Ananas · Avocat · Citron", price: "10–16 DT", image: goodDetoxImage, tag: "Détox" },
+      { name: "GOOD Tonic", description: "Gingembre · Ananas · Carotte · Pomme · Curcuma", price: "10–16 DT", image: goodTonicImage, tag: "Détox" },
   ],
   cafes: [],
   thesGlaces: [],
