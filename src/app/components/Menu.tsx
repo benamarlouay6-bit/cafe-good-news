@@ -74,6 +74,21 @@ type TextMenuSection = {
   items: { name: string; price: string; note?: string }[];
 };
 
+type FreshJuicePrice = {
+  size: "330 ml" | "400 ml" | "500 ml" | "1 L";
+  price: string;
+};
+
+type FreshJuiceItem = {
+  name: string;
+  prices: FreshJuicePrice[];
+};
+
+type FreshJuiceSection = {
+  title: string;
+  items: FreshJuiceItem[];
+};
+
 const menuData = {
   bubbletea: [
       { name: "Passion & Ananas", description: "Perles de fruits, sirop passion, the.", price: "14–16 DT", image: passionAnanas, tag: "Perles de Fruits" },
@@ -131,7 +146,18 @@ const menuData = {
       { name: "Blue", price: "12 DT" },
   ],
   powerDrinks: [],
-  freshJuices: [
+  freshJuices: [],
+  douceurs: [],
+} satisfies Record<string, MenuItem[]>;
+
+type MenuCategoryKey = keyof typeof menuData;
+
+const bubbleTeaTags = Array.from(new Set(menuData.bubbletea.map((item) => item.tag).filter(Boolean))) as string[];
+
+const freshJuiceSections: FreshJuiceSection[] = [
+  {
+    title: "SPECIAL FRESH JUICE",
+    items: [
       { name: "BERGAMOTE", prices: [{ size: "330 ml", price: "10 DT" }, { size: "1 L", price: "38 DT" }] },
       { name: "CITRON, BERGAMOTE", prices: [{ size: "330 ml", price: "9 DT" }, { size: "1 L", price: "35 DT" }] },
       { name: "FRAISE, FRAMBOISE", prices: [{ size: "330 ml", price: "16 DT" }, { size: "1 L", price: "70 DT" }] },
@@ -144,13 +170,79 @@ const menuData = {
       { name: "HINDI", prices: [{ size: "330 ml", price: "15 DT" }, { size: "1 L", price: "40 DT" }] },
       { name: "RAISIN ROUGE", prices: [{ size: "330 ml", price: "20 DT" }, { size: "1 L", price: "60 DT" }] },
       { name: "RAISIN BLANC", prices: [{ size: "330 ml", price: "18 DT" }, { size: "1 L", price: "60 DT" }] },
-  ],
-  douceurs: [],
-} satisfies Record<string, MenuItem[]>;
+    ],
+  },
+  {
+    title: "CITRON",
+    items: [
+      { name: "CITRON", prices: [{ size: "330 ml", price: "3 DT" }, { size: "400 ml", price: "4 DT" }, { size: "500 ml", price: "6 DT" }, { size: "1 L", price: "25 DT" }] },
+      { name: "CITRON, MENTHE", prices: [{ size: "330 ml", price: "3 DT" }, { size: "400 ml", price: "4 DT" }, { size: "500 ml", price: "7 DT" }, { size: "1 L", price: "30 DT" }] },
+      { name: "CITRON, MELON", prices: [{ size: "330 ml", price: "3.5 DT" }, { size: "400 ml", price: "4.5 DT" }, { size: "500 ml", price: "8 DT" }, { size: "1 L", price: "35 DT" }] },
+      { name: "CITRON, MENTHE", prices: [{ size: "330 ml", price: "4 DT" }, { size: "400 ml", price: "4.5 DT" }, { size: "500 ml", price: "8 DT" }, { size: "1 L", price: "35 DT" }] },
+      { name: "CITRON, ORGEAT", prices: [{ size: "330 ml", price: "4 DT" }, { size: "400 ml", price: "5 DT" }, { size: "500 ml", price: "8 DT" }, { size: "1 L", price: "35 DT" }] },
+    ],
+  },
+  {
+    title: "FRAISE",
+    items: [
+      { name: "FRAISE", prices: [{ size: "330 ml", price: "3.5 DT" }, { size: "400 ml", price: "4.5 DT" }, { size: "500 ml", price: "10 DT" }, { size: "1 L", price: "43 DT" }] },
+      { name: "FRAISE, CITRON", prices: [{ size: "330 ml", price: "3 DT" }, { size: "400 ml", price: "4 DT" }, { size: "500 ml", price: "9 DT" }, { size: "1 L", price: "40 DT" }] },
+      { name: "FRAISE, BANANE", prices: [{ size: "330 ml", price: "6 DT" }, { size: "400 ml", price: "7 DT" }, { size: "500 ml", price: "14 DT" }, { size: "1 L", price: "60 DT" }] },
+      { name: "FRAISE, ANANAS", prices: [{ size: "330 ml", price: "6 DT" }, { size: "400 ml", price: "7 DT" }, { size: "500 ml", price: "13 DT" }, { size: "1 L", price: "55 DT" }] },
+    ],
+  },
+  {
+    title: "MANGUE",
+    items: [
+      { name: "MANGUE", prices: [{ size: "330 ml", price: "5 DT" }, { size: "400 ml", price: "7 DT" }, { size: "500 ml", price: "14 DT" }, { size: "1 L", price: "50 DT" }] },
+      { name: "MANGUE, ANANAS", prices: [{ size: "330 ml", price: "7 DT" }, { size: "400 ml", price: "8 DT" }, { size: "500 ml", price: "16 DT" }, { size: "1 L", price: "65 DT" }] },
+      { name: "MANGUE, BANANE", prices: [{ size: "330 ml", price: "8 DT" }, { size: "400 ml", price: "9 DT" }, { size: "500 ml", price: "16 DT" }, { size: "1 L", price: "65 DT" }] },
+      { name: "MANGUE, PASSION, MELON", prices: [{ size: "330 ml", price: "8 DT" }, { size: "400 ml", price: "9 DT" }, { size: "500 ml", price: "18 DT" }, { size: "1 L", price: "75 DT" }] },
+      { name: "MANGUE, PASSION, ANANAS", prices: [{ size: "330 ml", price: "8 DT" }, { size: "400 ml", price: "9 DT" }, { size: "500 ml", price: "18 DT" }, { size: "1 L", price: "80 DT" }] },
+    ],
+  },
+  {
+    title: "ANANAS",
+    items: [
+      { name: "ANANAS", prices: [{ size: "330 ml", price: "6 DT" }, { size: "400 ml", price: "7 DT" }, { size: "500 ml", price: "11.5 DT" }, { size: "1 L", price: "65 DT" }] },
+      { name: "ANANAS, MELON", prices: [{ size: "330 ml", price: "5 DT" }, { size: "400 ml", price: "6.5 DT" }, { size: "500 ml", price: "14 DT" }, { size: "1 L", price: "55 DT" }] },
+      { name: "ANANAS, ORANGE", prices: [{ size: "330 ml", price: "6 DT" }, { size: "400 ml", price: "7 DT" }, { size: "500 ml", price: "14 DT" }, { size: "1 L", price: "55 DT" }] },
+      { name: "ANANAS, BANANE", prices: [{ size: "330 ml", price: "6.5 DT" }, { size: "400 ml", price: "7.5 DT" }, { size: "500 ml", price: "15 DT" }, { size: "1 L", price: "65 DT" }] },
+    ],
+  },
+  {
+    title: "PÊCHE",
+    items: [
+      { name: "PÊCHE", prices: [{ size: "330 ml", price: "4 DT" }, { size: "400 ml", price: "5 DT" }, { size: "500 ml", price: "10 DT" }, { size: "1 L", price: "35 DT" }] },
+      { name: "PÊCHE, MELON", prices: [{ size: "330 ml", price: "5 DT" }, { size: "400 ml", price: "6 DT" }, { size: "500 ml", price: "10 DT" }, { size: "1 L", price: "40 DT" }] },
+      { name: "PÊCHE, ABRICOT", prices: [{ size: "330 ml", price: "5 DT" }, { size: "400 ml", price: "6 DT" }, { size: "500 ml", price: "12 DT" }, { size: "1 L", price: "50 DT" }] },
+    ],
+  },
+  {
+    title: "KIWI",
+    items: [
+      { name: "KIWI", prices: [{ size: "330 ml", price: "6 DT" }, { size: "400 ml", price: "7 DT" }, { size: "500 ml", price: "11.5 DT" }, { size: "1 L", price: "65 DT" }] },
+      { name: "KIWI, BANANE", prices: [{ size: "330 ml", price: "6 DT" }, { size: "400 ml", price: "7 DT" }, { size: "500 ml", price: "15 DT" }, { size: "1 L", price: "65 DT" }] },
+      { name: "KIWI, ANANAS", prices: [{ size: "330 ml", price: "6 DT" }, { size: "400 ml", price: "7 DT" }, { size: "500 ml", price: "15 DT" }, { size: "1 L", price: "65 DT" }] },
+      { name: "KIWI, BANANE, MELON", prices: [{ size: "330 ml", price: "5.5 DT" }, { size: "400 ml", price: "7 DT" }, { size: "500 ml", price: "15 DT" }, { size: "1 L", price: "65 DT" }] },
+    ],
+  },
+  {
+    title: "ADDITIONAL FRUITS",
+    items: [
+      { name: "GOYAVE", prices: [{ size: "330 ml", price: "5 DT" }, { size: "400 ml", price: "6 DT" }, { size: "500 ml", price: "12 DT" }, { size: "1 L", price: "50 DT" }] },
+      { name: "MELON", prices: [{ size: "330 ml", price: "4 DT" }, { size: "400 ml", price: "5.5 DT" }, { size: "500 ml", price: "10 DT" }, { size: "1 L", price: "40 DT" }] },
+      { name: "BANANE, NOISETTE", prices: [{ size: "330 ml", price: "8 DT" }, { size: "400 ml", price: "10 DT" }, { size: "500 ml", price: "20 DT" }, { size: "1 L", price: "N.D" }] },
+      { name: "PINACOLADA (ANANAS, NOIX DE COCO)", prices: [{ size: "330 ml", price: "8 DT" }, { size: "400 ml", price: "9 DT" }, { size: "500 ml", price: "18 DT" }, { size: "1 L", price: "75 DT" }] },
+    ],
+  },
+];
 
-type MenuCategoryKey = keyof typeof menuData;
+const freshJuiceCapacities: FreshJuicePrice["size"][] = ["330 ml", "400 ml", "500 ml", "1 L"];
 
-const bubbleTeaTags = Array.from(new Set(menuData.bubbletea.map((item) => item.tag).filter(Boolean))) as string[];
+const freshJuiceFruits = ["Citron", "Fraise", "Kiwi", "Mangue", "Ananas", "Melon", "Passion", "Pêche", "Goyave"];
+
+const freshJuiceItemCount = freshJuiceSections.reduce((count, section) => count + section.items.length, 0);
 
 const cafeMenuSections: CafeMenuSection[] = [
   {
@@ -454,7 +546,6 @@ const categories: MenuCategory[] = [
     color: "#fde68a",
     bgColor: "#fffbeb",
     textColor: "#92400e",
-    note: "📏 Tailles disponibles : 330ml / 470ml",
   },
   {
     key: "douceurs",
@@ -861,6 +952,230 @@ function PowerDrinksMenuSection({ color, textColor }: { color: string; textColor
   );
 }
 
+function FreshJuicesMenuSection({ color, textColor }: { color: string; textColor: string }) {
+  return (
+    <motion.div
+      key="fresh-juices-text-menu"
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -16 }}
+      transition={{ duration: 0.4 }}
+      className="space-y-6"
+    >
+      <section
+        className="overflow-hidden rounded-[2rem]"
+        style={{
+          background: "linear-gradient(135deg, #fffaf2 0%, #fff6dd 48%, #f7f6f2 100%)",
+          border: `2px solid ${color}`,
+          boxShadow: "0 18px 48px rgba(44,44,44,0.1)",
+        }}
+      >
+        <div className="px-5 py-6 sm:px-8">
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <p
+                style={{
+                  fontFamily: "'Nunito', sans-serif",
+                  fontSize: 12,
+                  fontWeight: 900,
+                  letterSpacing: 3,
+                  color: textColor,
+                }}
+              >
+                GOOD NEWS
+              </p>
+              <h4
+                className="mt-2"
+                style={{
+                  fontFamily: "'Playfair Display', serif",
+                  fontSize: "clamp(2rem, 7vw, 4.75rem)",
+                  color: "#2C2C2C",
+                  lineHeight: 0.95,
+                }}
+              >
+                Fresh Juices
+              </h4>
+            </div>
+            <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:justify-end">
+              {freshJuiceCapacities.map((capacity) => (
+                <span
+                  key={capacity}
+                  className="inline-flex items-center justify-center rounded-full px-4 py-2"
+                  style={{
+                    background: capacity === "1 L" ? color : "#fffaf2",
+                    border: `2px solid ${color}`,
+                    color: capacity === "1 L" ? textColor : "#2C2C2C",
+                    fontFamily: "'Nunito', sans-serif",
+                    fontSize: 13,
+                    fontWeight: 900,
+                    boxShadow: "0 6px 18px rgba(44,44,44,0.07)",
+                  }}
+                >
+                  {capacity}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-5">
+        {freshJuiceSections.map((section) => (
+          <section
+            key={section.title}
+            className="rounded-2xl overflow-hidden"
+            style={{
+              background: "#fffaf2",
+              border: `1px solid ${color}`,
+              boxShadow: "0 10px 28px rgba(44,44,44,0.07)",
+            }}
+          >
+            <div
+              className="px-5 py-3 text-center"
+              style={{
+                background: color,
+                color: textColor,
+                fontFamily: "'Nunito', sans-serif",
+                fontSize: "clamp(0.9rem, 3vw, 1.15rem)",
+                fontWeight: 900,
+                letterSpacing: 1,
+              }}
+            >
+              {section.title}
+            </div>
+            <div className="p-3 sm:p-5">
+              <div className="hidden sm:grid grid-cols-[minmax(0,1.35fr)_repeat(4,minmax(72px,0.55fr))] gap-2 px-2 pb-3">
+                <span />
+                {freshJuiceCapacities.map((capacity) => (
+                  <span
+                    key={capacity}
+                    className="rounded-full px-2 py-1 text-center"
+                    style={{
+                      background: "#F7F6F2",
+                      color: textColor,
+                      fontFamily: "'Nunito', sans-serif",
+                      fontSize: 11,
+                      fontWeight: 900,
+                    }}
+                  >
+                    {capacity}
+                  </span>
+                ))}
+              </div>
+              <div className="space-y-2">
+                {section.items.map((item, index) => (
+                  <div
+                    key={`${section.title}-${item.name}-${index}`}
+                    className="rounded-xl px-3 py-3 sm:grid sm:grid-cols-[minmax(0,1.35fr)_repeat(4,minmax(72px,0.55fr))] sm:items-center sm:gap-2"
+                    style={{
+                      background: index % 2 === 0 ? "#F7F6F2" : "#fffaf2",
+                      border: "1px solid rgba(44,44,44,0.05)",
+                    }}
+                  >
+                    <h5
+                      style={{
+                        fontFamily: "'Nunito', sans-serif",
+                        color: "#2C2C2C",
+                        fontSize: 13,
+                        fontWeight: 900,
+                        letterSpacing: 0.2,
+                        lineHeight: 1.25,
+                      }}
+                    >
+                      {item.name}
+                    </h5>
+                    <div className="mt-3 grid grid-cols-2 gap-2 sm:contents">
+                      {freshJuiceCapacities.map((capacity) => {
+                        const option = item.prices.find((price) => price.size === capacity);
+
+                        return (
+                          <div
+                            key={capacity}
+                            className="flex items-center justify-between gap-2 rounded-full px-3 py-2 sm:justify-center sm:px-2"
+                            style={{
+                              background: option ? "#ffffff" : "rgba(255,255,255,0.38)",
+                              color: option ? "#2C2C2C" : "rgba(44,44,44,0.3)",
+                              border: `1px solid ${option ? "rgba(44,44,44,0.08)" : "transparent"}`,
+                              fontFamily: "'Nunito', sans-serif",
+                              fontSize: 12,
+                              fontWeight: 900,
+                            }}
+                          >
+                            <span className="sm:hidden" style={{ color: textColor }}>
+                              {capacity}
+                            </span>
+                            <span style={{ color: option?.price === "N.D" ? "#7B8478" : textColor }}>
+                              {option?.price ?? "-"}
+                            </span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        ))}
+      </div>
+
+      <section
+        className="rounded-2xl p-5 sm:p-7"
+        style={{
+          background: "#fffaf2",
+          border: `2px solid ${color}`,
+          boxShadow: "0 10px 28px rgba(44,44,44,0.07)",
+        }}
+      >
+        <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <h4
+              style={{
+                fontFamily: "'Nunito', sans-serif",
+                fontSize: "clamp(1.05rem, 4vw, 1.6rem)",
+                color: textColor,
+                fontWeight: 900,
+                letterSpacing: 1,
+              }}
+            >
+              COMPOSEZ VOUS (3 FRUITS)
+            </h4>
+            <p
+              className="mt-1"
+              style={{
+                fontFamily: "'Nunito', sans-serif",
+                fontSize: 13,
+                color: "#6b6b5e",
+                fontWeight: 800,
+              }}
+            >
+              FRUITS DISPONIBLES :
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {freshJuiceFruits.map((fruit) => (
+              <span
+                key={fruit}
+                className="rounded-full px-4 py-2"
+                style={{
+                  background: "#F7F6F2",
+                  color: "#2C2C2C",
+                  border: `1px solid ${color}`,
+                  fontFamily: "'Nunito', sans-serif",
+                  fontSize: 13,
+                  fontWeight: 900,
+                }}
+              >
+                {fruit}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+    </motion.div>
+  );
+}
+
 function MenuPriceRow({ item, textColor }: { item: TextMenuSection["items"][number]; textColor: string }) {
   return (
     <div>
@@ -1061,7 +1376,9 @@ export function Menu() {
           ? powerDrinkItemCount
           : active === "douceurs"
             ? douceurMenuItemCount
-          : currentItems.length;
+            : active === "freshJuices"
+              ? freshJuiceItemCount
+              : currentItems.length;
 
   return (
     <section id="menu" style={{ background: "#F7F6F2", padding: "96px 0" }}>
@@ -1211,6 +1528,8 @@ export function Menu() {
             <MojitosMenuSection items={currentItems} color={current.color} textColor={current.textColor} />
           ) : active === "powerDrinks" ? (
             <PowerDrinksMenuSection color={current.color} textColor={current.textColor} />
+          ) : active === "freshJuices" ? (
+            <FreshJuicesMenuSection color={current.color} textColor={current.textColor} />
           ) : active === "douceurs" ? (
             <DouceursMenuSection color={current.color} textColor={current.textColor} />
           ) : (
