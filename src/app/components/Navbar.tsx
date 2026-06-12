@@ -42,7 +42,7 @@ export function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16 md:h-20">
           <button onClick={() => scrollTo("#accueil")} className="flex items-center gap-3">
-            <img src={logoImg} alt="Good News Sfax" className="h-10 w-10 rounded-full object-cover" />
+            <img src={logoImg} alt="Good News Tunisia" className="h-10 w-10 rounded-full object-cover" />
             <span
               style={{
                 fontFamily: "'Playfair Display', serif",
