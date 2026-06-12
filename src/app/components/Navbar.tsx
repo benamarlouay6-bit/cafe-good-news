@@ -53,7 +53,7 @@ export function Navbar() {
               }}
               className="hidden sm:block"
             >
-              Good News Sfax
+              Good News Tunisia
             </span>
           </button>
 
