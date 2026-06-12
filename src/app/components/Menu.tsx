@@ -171,70 +171,70 @@ const freshJuiceSections: FreshJuiceSection[] = [
   {
     title: "CITRON",
     items: [
-      { name: "CITRON", prices: [{ size: "330 ml", price: "3 DT" }, { size: "400 ml", price: "4 DT" }, { size: "1 L", price: "6 DT" }, { size: "1 L", price: "25 DT" }] },
-      { name: "CITRON, MENTHE", prices: [{ size: "330 ml", price: "3 DT" }, { size: "400 ml", price: "4 DT" }, { size: "1 L", price: "7 DT" }, { size: "1 L", price: "30 DT" }] },
-      { name: "CITRON, MELON", prices: [{ size: "330 ml", price: "3.5 DT" }, { size: "400 ml", price: "4.5 DT" }, { size: "1 L", price: "8 DT" }, { size: "1 L", price: "35 DT" }] },
-      { name: "CITRON, MENTHE", prices: [{ size: "330 ml", price: "4 DT" }, { size: "400 ml", price: "4.5 DT" }, { size: "1 L", price: "8 DT" }, { size: "1 L", price: "35 DT" }] },
-      { name: "CITRON, ORGEAT", prices: [{ size: "330 ml", price: "4 DT" }, { size: "400 ml", price: "5 DT" }, { size: "1 L", price: "8 DT" }, { size: "1 L", price: "35 DT" }] },
+      { name: "CITRON", prices: [{ size: "330 ml", price: "3 DT" }, { size: "400 ml", price: "4 DT" }, { size: "1 L", price: "6 DT" }, { size: "5 L", price: "25 DT" }] },
+      { name: "CITRON, MENTHE", prices: [{ size: "330 ml", price: "3 DT" }, { size: "400 ml", price: "4 DT" }, { size: "1 L", price: "7 DT" }, { size: "5 L", price: "30 DT" }] },
+      { name: "CITRON, MELON", prices: [{ size: "330 ml", price: "3.5 DT" }, { size: "400 ml", price: "4.5 DT" }, { size: "1 L", price: "8 DT" }, { size: "5 L", price: "35 DT" }] },
+      { name: "CITRON, MENTHE", prices: [{ size: "330 ml", price: "4 DT" }, { size: "400 ml", price: "4.5 DT" }, { size: "1 L", price: "8 DT" }, { size: "5 L", price: "35 DT" }] },
+      { name: "CITRON, ORGEAT", prices: [{ size: "330 ml", price: "4 DT" }, { size: "400 ml", price: "5 DT" }, { size: "1 L", price: "8 DT" }, { size: "5 L", price: "35 DT" }] },
     ],
   },
   {
     title: "FRAISE",
     items: [
-      { name: "FRAISE", prices: [{ size: "330 ml", price: "3.5 DT" }, { size: "400 ml", price: "4.5 DT" }, { size: "1 L", price: "10 DT" }, { size: "1 L", price: "43 DT" }] },
-      { name: "FRAISE, CITRON", prices: [{ size: "330 ml", price: "3 DT" }, { size: "400 ml", price: "4 DT" }, { size: "1 L", price: "9 DT" }, { size: "1 L", price: "40 DT" }] },
-      { name: "FRAISE, BANANE", prices: [{ size: "330 ml", price: "6 DT" }, { size: "400 ml", price: "7 DT" }, { size: "1 L", price: "14 DT" }, { size: "1 L", price: "60 DT" }] },
-      { name: "FRAISE, ANANAS", prices: [{ size: "330 ml", price: "6 DT" }, { size: "400 ml", price: "7 DT" }, { size: "1 L", price: "13 DT" }, { size: "1 L", price: "55 DT" }] },
+      { name: "FRAISE", prices: [{ size: "330 ml", price: "3.5 DT" }, { size: "400 ml", price: "4.5 DT" }, { size: "1 L", price: "10 DT" }, { size: "5 L", price: "43 DT" }] },
+      { name: "FRAISE, CITRON", prices: [{ size: "330 ml", price: "3 DT" }, { size: "400 ml", price: "4 DT" }, { size: "1 L", price: "9 DT" }, { size: "5 L", price: "40 DT" }] },
+      { name: "FRAISE, BANANE", prices: [{ size: "330 ml", price: "6 DT" }, { size: "400 ml", price: "7 DT" }, { size: "1 L", price: "14 DT" }, { size: "5 L", price: "60 DT" }] },
+      { name: "FRAISE, ANANAS", prices: [{ size: "330 ml", price: "6 DT" }, { size: "400 ml", price: "7 DT" }, { size: "1 L", price: "13 DT" }, { size: "5 L", price: "55 DT" }] },
     ],
   },
   {
     title: "MANGUE",
     items: [
-      { name: "MANGUE", prices: [{ size: "330 ml", price: "5 DT" }, { size: "400 ml", price: "7 DT" }, { size: "1 L", price: "14 DT" }, { size: "1 L", price: "50 DT" }] },
-      { name: "MANGUE, ANANAS", prices: [{ size: "330 ml", price: "7 DT" }, { size: "400 ml", price: "8 DT" }, { size: "1 L", price: "16 DT" }, { size: "1 L", price: "65 DT" }] },
-      { name: "MANGUE, BANANE", prices: [{ size: "330 ml", price: "8 DT" }, { size: "400 ml", price: "9 DT" }, { size: "1 L", price: "16 DT" }, { size: "1 L", price: "65 DT" }] },
-      { name: "MANGUE, PASSION, MELON", prices: [{ size: "330 ml", price: "8 DT" }, { size: "400 ml", price: "9 DT" }, { size: "1 L", price: "18 DT" }, { size: "1 L", price: "75 DT" }] },
-      { name: "MANGUE, PASSION, ANANAS", prices: [{ size: "330 ml", price: "8 DT" }, { size: "400 ml", price: "9 DT" }, { size: "1 L", price: "18 DT" }, { size: "1 L", price: "80 DT" }] },
+      { name: "MANGUE", prices: [{ size: "330 ml", price: "5 DT" }, { size: "400 ml", price: "7 DT" }, { size: "1 L", price: "14 DT" }, { size: "5 L", price: "50 DT" }] },
+      { name: "MANGUE, ANANAS", prices: [{ size: "330 ml", price: "7 DT" }, { size: "400 ml", price: "8 DT" }, { size: "1 L", price: "16 DT" }, { size: "5 L", price: "65 DT" }] },
+      { name: "MANGUE, BANANE", prices: [{ size: "330 ml", price: "8 DT" }, { size: "400 ml", price: "9 DT" }, { size: "1 L", price: "16 DT" }, { size: "5 L", price: "65 DT" }] },
+      { name: "MANGUE, PASSION, MELON", prices: [{ size: "330 ml", price: "8 DT" }, { size: "400 ml", price: "9 DT" }, { size: "1 L", price: "18 DT" }, { size: "5 L", price: "75 DT" }] },
+      { name: "MANGUE, PASSION, ANANAS", prices: [{ size: "330 ml", price: "8 DT" }, { size: "400 ml", price: "9 DT" }, { size: "1 L", price: "18 DT" }, { size: "5 L", price: "80 DT" }] },
     ],
   },
   {
     title: "ANANAS",
     items: [
-      { name: "ANANAS", prices: [{ size: "330 ml", price: "6 DT" }, { size: "400 ml", price: "7 DT" }, { size: "1 L", price: "11.5 DT" }, { size: "1 L", price: "65 DT" }] },
-      { name: "ANANAS, MELON", prices: [{ size: "330 ml", price: "5 DT" }, { size: "400 ml", price: "6.5 DT" }, { size: "1 L", price: "14 DT" }, { size: "1 L", price: "55 DT" }] },
-      { name: "ANANAS, ORANGE", prices: [{ size: "330 ml", price: "6 DT" }, { size: "400 ml", price: "7 DT" }, { size: "1 L", price: "14 DT" }, { size: "1 L", price: "55 DT" }] },
-      { name: "ANANAS, BANANE", prices: [{ size: "330 ml", price: "6.5 DT" }, { size: "400 ml", price: "7.5 DT" }, { size: "1 L", price: "15 DT" }, { size: "1 L", price: "65 DT" }] },
+      { name: "ANANAS", prices: [{ size: "330 ml", price: "6 DT" }, { size: "400 ml", price: "7 DT" }, { size: "1 L", price: "11.5 DT" }, { size: "5 L", price: "65 DT" }] },
+      { name: "ANANAS, MELON", prices: [{ size: "330 ml", price: "5 DT" }, { size: "400 ml", price: "6.5 DT" }, { size: "1 L", price: "14 DT" }, { size: "5 L", price: "55 DT" }] },
+      { name: "ANANAS, ORANGE", prices: [{ size: "330 ml", price: "6 DT" }, { size: "400 ml", price: "7 DT" }, { size: "1 L", price: "14 DT" }, { size: "5 L", price: "55 DT" }] },
+      { name: "ANANAS, BANANE", prices: [{ size: "330 ml", price: "6.5 DT" }, { size: "400 ml", price: "7.5 DT" }, { size: "1 L", price: "15 DT" }, { size: "5 L", price: "65 DT" }] },
     ],
   },
   {
     title: "PÊCHE",
     items: [
-      { name: "PÊCHE", prices: [{ size: "330 ml", price: "4 DT" }, { size: "400 ml", price: "5 DT" }, { size: "1 L", price: "10 DT" }, { size: "1 L", price: "35 DT" }] },
-      { name: "PÊCHE, MELON", prices: [{ size: "330 ml", price: "5 DT" }, { size: "400 ml", price: "6 DT" }, { size: "1 L", price: "10 DT" }, { size: "1 L", price: "40 DT" }] },
-      { name: "PÊCHE, ABRICOT", prices: [{ size: "330 ml", price: "5 DT" }, { size: "400 ml", price: "6 DT" }, { size: "1 L", price: "12 DT" }, { size: "1 L", price: "50 DT" }] },
+      { name: "PÊCHE", prices: [{ size: "330 ml", price: "4 DT" }, { size: "400 ml", price: "5 DT" }, { size: "1 L", price: "10 DT" }, { size: "5 L", price: "35 DT" }] },
+      { name: "PÊCHE, MELON", prices: [{ size: "330 ml", price: "5 DT" }, { size: "400 ml", price: "6 DT" }, { size: "1 L", price: "10 DT" }, { size: "5 L", price: "40 DT" }] },
+      { name: "PÊCHE, ABRICOT", prices: [{ size: "330 ml", price: "5 DT" }, { size: "400 ml", price: "6 DT" }, { size: "1 L", price: "12 DT" }, { size: "5 L", price: "50 DT" }] },
     ],
   },
   {
     title: "KIWI",
     items: [
-      { name: "KIWI", prices: [{ size: "330 ml", price: "6 DT" }, { size: "400 ml", price: "7 DT" }, { size: "1 L", price: "11.5 DT" }, { size: "1 L", price: "65 DT" }] },
-      { name: "KIWI, BANANE", prices: [{ size: "330 ml", price: "6 DT" }, { size: "400 ml", price: "7 DT" }, { size: "1 L", price: "15 DT" }, { size: "1 L", price: "65 DT" }] },
-      { name: "KIWI, ANANAS", prices: [{ size: "330 ml", price: "6 DT" }, { size: "400 ml", price: "7 DT" }, { size: "1 L", price: "15 DT" }, { size: "1 L", price: "65 DT" }] },
-      { name: "KIWI, BANANE, MELON", prices: [{ size: "330 ml", price: "5.5 DT" }, { size: "400 ml", price: "7 DT" }, { size: "1 L", price: "15 DT" }, { size: "1 L", price: "65 DT" }] },
+      { name: "KIWI", prices: [{ size: "330 ml", price: "6 DT" }, { size: "400 ml", price: "7 DT" }, { size: "1 L", price: "11.5 DT" }, { size: "5 L", price: "65 DT" }] },
+      { name: "KIWI, BANANE", prices: [{ size: "330 ml", price: "6 DT" }, { size: "400 ml", price: "7 DT" }, { size: "1 L", price: "15 DT" }, { size: "5 L", price: "65 DT" }] },
+      { name: "KIWI, ANANAS", prices: [{ size: "330 ml", price: "6 DT" }, { size: "400 ml", price: "7 DT" }, { size: "1 L", price: "15 DT" }, { size: "5 L", price: "65 DT" }] },
+      { name: "KIWI, BANANE, MELON", prices: [{ size: "330 ml", price: "5.5 DT" }, { size: "400 ml", price: "7 DT" }, { size: "1 L", price: "15 DT" }, { size: "5 L", price: "65 DT" }] },
     ],
   },
   {
     title: "ADDITIONAL FRUITS",
     items: [
-      { name: "GOYAVE", prices: [{ size: "330 ml", price: "5 DT" }, { size: "400 ml", price: "6 DT" }, { size: "1 L", price: "12 DT" }, { size: "1 L", price: "50 DT" }] },
-      { name: "MELON", prices: [{ size: "330 ml", price: "4 DT" }, { size: "400 ml", price: "5.5 DT" }, { size: "1 L", price: "10 DT" }, { size: "1 L", price: "40 DT" }] },
-      { name: "BANANE, NOISETTE", prices: [{ size: "330 ml", price: "8 DT" }, { size: "400 ml", price: "10 DT" }, { size: "1 L", price: "20 DT" }, { size: "1 L", price: "N.D" }] },
-      { name: "PINACOLADA (ANANAS, NOIX DE COCO)", prices: [{ size: "330 ml", price: "8 DT" }, { size: "400 ml", price: "9 DT" }, { size: "1 L", price: "18 DT" }, { size: "1 L", price: "75 DT" }] },
+      { name: "GOYAVE", prices: [{ size: "330 ml", price: "5 DT" }, { size: "400 ml", price: "6 DT" }, { size: "1 L", price: "12 DT" }, { size: "5 L", price: "50 DT" }] },
+      { name: "MELON", prices: [{ size: "330 ml", price: "4 DT" }, { size: "400 ml", price: "5.5 DT" }, { size: "1 L", price: "10 DT" }, { size: "5 L", price: "40 DT" }] },
+      { name: "BANANE, NOISETTE", prices: [{ size: "330 ml", price: "8 DT" }, { size: "400 ml", price: "10 DT" }, { size: "1 L", price: "20 DT" }, { size: "5 L", price: "N.D" }] },
+      { name: "PINACOLADA (ANANAS, NOIX DE COCO)", prices: [{ size: "330 ml", price: "8 DT" }, { size: "400 ml", price: "9 DT" }, { size: "1 L", price: "18 DT" }, { size: "5 L", price: "75 DT" }] },
     ],
   },
 ];
 
-const freshJuiceCapacities: FreshJuicePrice["size"][] = ["330 ml", "400 ml", "1 L", "1 L"];
+const freshJuiceCapacities: FreshJuicePrice["size"][] = ["330 ml", "400 ml", "1 L", "5 L"];
 
 const freshJuiceFruits = ["Citron", "Fraise", "Kiwi", "Mangue", "Ananas", "Melon", "Passion", "Pêche", "Goyave"];
 
