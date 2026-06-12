@@ -2,25 +2,31 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronDown } from "lucide-react";
 
+import heroImage1 from "@/assets/hero/1.jpeg";
+import heroImage2 from "@/assets/hero/2.jpeg";
+import heroImage3 from "@/assets/hero/3.jpeg";
+import heroImage4 from "@/assets/hero/4.jpeg";
+import heroImage5 from "@/assets/hero/5.jpeg";
+
 const slides = [
   {
-    url: "https://images.unsplash.com/photo-1747016804753-866c3ed6b3b7?w=1600&h=900&fit=crop&auto=format",
+    url: heroImage1,
     alt: "Quatre bubble teas colorés",
   },
   {
-    url: "https://images.unsplash.com/photo-1741243038487-1d835e67bcbf?w=1600&h=900&fit=crop&auto=format",
+    url: heroImage2,
     alt: "Tiger sugar drinks",
   },
   {
-    url: "https://images.unsplash.com/photo-1529892485617-25f63cd7b1e9?w=1600&h=900&fit=crop&auto=format",
+    url: heroImage3,
     alt: "Latte art coffee",
   },
   {
-    url: "https://images.unsplash.com/photo-1514995428455-447d4443fa7f?w=1600&h=900&fit=crop&auto=format",
+    url: heroImage4,
     alt: "Smoothie fruits frais",
   },
   {
-    url: "https://images.unsplash.com/photo-1759303380841-55c09244fd2b?w=1600&h=900&fit=crop&auto=format",
+    url: heroImage5,
     alt: "San Sebastian cheesecake",
   },
 ];
