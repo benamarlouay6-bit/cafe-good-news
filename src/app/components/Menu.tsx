@@ -554,7 +554,17 @@ const categories: MenuCategory[] = [
   },
 ];
 
-function MenuCard({ item, color, textColor }: { item: MenuItem; color: string; textColor: string }) {
+function MenuCard({
+  item,
+  color,
+  textColor,
+  showPrice = true,
+}: {
+  item: MenuItem;
+  color: string;
+  textColor: string;
+  showPrice?: boolean;
+}) {
   return (
     <motion.div
       layout
@@ -614,7 +624,7 @@ function MenuCard({ item, color, textColor }: { item: MenuItem; color: string; t
             ))}
           </div>
         )}
-        {item.price && !item.prices && (
+        {showPrice && item.price && !item.prices && (
           <p
             className="mt-auto pt-2"
             style={{ fontFamily: "'Nunito', sans-serif", fontSize: 15, fontWeight: 800, color: textColor }}
@@ -1512,6 +1522,29 @@ export function Menu() {
               textColor={current.textColor}
             />
           )}
+          {active === "smoothies" && (
+            <CapacityHeader
+              title="SMOOTHIES - FRUITS NATURELS"
+              capacities={[
+                { size: "330 ml", price: "12 DT" },
+                { size: "400 ml", price: "14 DT" },
+              ]}
+              color={current.color}
+              textColor={current.textColor}
+            />
+          )}
+          {active === "jusDetox" && (
+            <CapacityHeader
+              title="JUS DETOX"
+              capacities={[
+                { size: "330 ml", price: "10 DT" },
+                { size: "400 ml", price: "12 DT" },
+                { size: "500 ml", price: "16 DT" },
+              ]}
+              color={current.color}
+              textColor={current.textColor}
+            />
+          )}
         </AnimatePresence>
 
         {/* Items grid */}
@@ -1539,6 +1572,7 @@ export function Menu() {
                   item={item}
                   color={current.color}
                   textColor={current.textColor}
+                  showPrice={active !== "smoothies" && active !== "jusDetox"}
                 />
               ))}
             </motion.div>
