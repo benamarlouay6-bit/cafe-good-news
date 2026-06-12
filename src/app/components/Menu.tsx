@@ -207,7 +207,7 @@ const freshJuiceSections: FreshJuiceSection[] = [
       { name: "MANGUE, ANANAS", prices: [{ size: "330 ml", price: "8 DT" }, { size: "400 ml", price: "9 DT" }, { size: "1 L", price: "17 DT" }, { size: "5 L", price: "68 DT" }] },
       { name: "MANGUE, BANANE", prices: [{ size: "330 ml", price: "9 DT" }, { size: "400 ml", price: "9.5 DT" }, { size: "1 L", price: "18 DT" }, { size: "5 L", price: "69 DT" }] },
       { name: "MANGUE, PASSION, MELON", prices: [{ size: "330 ml", price: "10 DT" }, { size: "400 ml", price: "11 DT" }, { size: "1 L", price: "20 DT" }, { size: "5 L", price: "80 DT" }] },
-      { name: "MANGUE, PASSION, ANANAS", prices: [{ size: "330 ml", price: "11 DT" }, { size: "400 ml", price: 11.5 DT" }, { size: "1 L", price: "20.5 DT" }, { size: "5 L", price: "85 DT" }] },
+      { name: "MANGUE, PASSION, ANANAS", prices: [{ size: "330 ml", price: "11 DT" }, { size: "400 ml", price: "11.5 DT" }, { size: "1 L", price: "20.5 DT" }, { size: "5 L", price: "85 DT" }] },
     ],
   },
   {
