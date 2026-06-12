@@ -22,15 +22,14 @@ import detoxTable from "@/assets/jus-detox/detox-table.jpeg";
 import freshBottles from "@/assets/fresh-juices/fresh-bottles.png";
 import freshFruits from "@/assets/fresh-juices/fresh-fruits.jpeg";
 
-import avocadoDrinkImage from "@/assets/smoothies/avocado-drink.png";
-import cocoLocoImage from "@/assets/smoothies/coco-loco.png";
-import dominicoImage from "@/assets/smoothies/dominico.png";
-import kiwiSunImage from "@/assets/smoothies/kiwi-sun.png";
-import marabellaImage from "@/assets/smoothies/marabella.png";
-import miamiImage from "@/assets/smoothies/miami.png";
-import passionataImage from "@/assets/smoothies/passionata.png";
-import soleilDeFruitsImage from "@/assets/smoothies/soleil-de-fruits.png";
-
+import avocadoDrinkImage from "@/assets/smoothies/avocado-drink.jpeg";
+import cocoLocoImage from "@/assets/smoothies/coco-loco.jpeg";
+import dominicoImage from "@/assets/smoothies/dominico.jpeg";
+import kiwiSunImage from "@/assets/smoothies/kiwi-sun.jpeg";
+import marabellaImage from "@/assets/smoothies/marabella.jpeg";
+import miamiImage from "@/assets/smoothies/miami.jpeg";
+import passionataImage from "@/assets/smoothies/passionata.jpeg";
+import soleilDeFruitsImage from "@/assets/smoothies/soleil-de-fruits.jpeg";
 type MenuItem = {
   name: string;
   description?: string;
