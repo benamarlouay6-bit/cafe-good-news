@@ -28,9 +28,10 @@ import soleilDeFruitsImage from "@/assets/smoothies/soleil-de-fruits.jpeg";
 import goodDetoxImage from "@/assets/jus-detox/good-detox.jpeg";
 import goodHydrationImage from "@/assets/jus-detox/good-hydration.jpeg";
 import goodTonicImage from "@/assets/jus-detox/good-tonic.jpeg";
-import granitaFruitsImage from "@/assets/smoothies/soleil-de-fruits.jpeg";
-import fruitCupImage from "@/assets/smoothies/marabella.jpeg";
-import icedTeaFruitCanImage from "@/assets/jus-detox/good-hydration.jpeg";
+
+import granitaFruitsImage from "@/assets/refrechments/1.jpeg";
+import fruitCupImage from "@/assets/refrechments/2.jpeg";
+import icedTeaFruitCanImage from "@/assets/refrechments/3.jpeg";
 
 type MenuItem = {
   name: string;
