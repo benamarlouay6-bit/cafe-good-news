@@ -42,7 +42,7 @@ export function Loader() {
                 letterSpacing: 2,
               }}
             >
-              GOOD NEWS SFAX
+              GOOD NEWS TUNISIA
             </motion.p>
             <motion.p
               initial={{ opacity: 0 }}
