@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from "motion/react";
 import { ChevronDown } from "lucide-react";
 
 import heroImage1 from "@/assets/hero/1.jpeg";
-import heroImage2 from "@/assets/hero/2.jpeg";
+import heroImage2 from "@/assets/hero/2.png";
 import heroImage3 from "@/assets/hero/3.jpeg";
-import heroImage4 from "@/assets/hero/4.jpeg";
+import heroImage4 from "@/assets/hero/4.png";
 import heroImage5 from "@/assets/hero/5.jpeg";
 
 const slides = [

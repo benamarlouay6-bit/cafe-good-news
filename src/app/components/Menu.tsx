@@ -29,7 +29,7 @@ import goodDetoxImage from "@/assets/jus-detox/good-detox.jpeg";
 import goodHydrationImage from "@/assets/jus-detox/good-hydration.jpeg";
 import goodTonicImage from "@/assets/jus-detox/good-tonic.jpeg";
 
-
+type MenuItem = {
   name: string;
   description?: string;
   price?: string;
